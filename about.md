@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: About the HearthSim community
 permalink: /about/
 ---
