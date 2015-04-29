@@ -1,10 +1,20 @@
 ---
 layout: post
-title: You're up and running!
+title: About the HearthSim community
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+We are a small community of developers passionate about [Hearthstone](http://playhearthstone.com). We build simulators and other tools around and for the game.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+Are you interested? Come join us on the `#Hearthsim` IRC channel on the [Freenode network](https://webchat.freenode.net/).
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+Our main projects:
+ * [Fireplace](https://github.com/jleclanche/fireplace) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python. 
+ * [Hearthbreaker](https://github.com/danielyule/hearthbreaker) is a Hearthstone simulator in Python and also implements all the cards.
+ * [Hearthy](https://github.com/HearthSim/Hearthy) is a Python framework for interacting with the Hearthstone protocol. It includes server-to-simulator communication logic.
+
+
+Some of our other projects:
+ * [Soot](https://github.com/mischanix/soot) is an attempt at building a Clojure-based Hearthstone Card DSL and engine.
+ * [UnityHook](https://github.com/HearthSim/UnityHook) is a framework for hooking into [Unity](http://unity3d.com/) games' function calls.
+ * [CSharp-Proto-Extractor](https://github.com/HearthSim/csharp-proto-extractor) is a [ProtoBuf](https://developers.google.com/protocol-buffers/) extractor for protobufs compiled with [protobuf-csharp-port](https://code.google.com/p/protobuf-csharp-port/wiki/GettingStarted) (which Hearthstone uses)
+
