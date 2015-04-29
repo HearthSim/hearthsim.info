@@ -1,6 +1,7 @@
 ---
 layout: post
 title: About the HearthSim community
+permalink: /about/
 ---
 
 We are a small community of developers passionate about [Hearthstone](http://playhearthstone.com). We build simulators and other tools around and for the game.
