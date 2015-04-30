@@ -20,3 +20,6 @@ Some of our other projects:
  * [Soot](https://github.com/mischanix/soot) is an attempt at building a Clojure-based Hearthstone Card DSL and engine.
  * [UnityHook](https://github.com/HearthSim/UnityHook) is a framework for hooking into [Unity](http://unity3d.com/) games' function calls.
  * [CSharp-Proto-Extractor](https://github.com/HearthSim/csharp-proto-extractor) is a [ProtoBuf](https://developers.google.com/protocol-buffers/) extractor for protobufs compiled with [protobuf-csharp-port](https://code.google.com/p/protobuf-csharp-port/wiki/GettingStarted) (which Hearthstone uses)
+
+
+We also have a low-frequency mailing list on [Google Groups](https://groups.google.com/forum/#!forum/hearthstone-simulator-dev). However, development is mostly discussed in the #hearthsim channel.
