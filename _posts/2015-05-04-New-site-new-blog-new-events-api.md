@@ -22,6 +22,7 @@ cards.
 I started writing the new actions engine on the plane, almost a month ago. I started by stubbing
 absolutely everything, replacing every single cards by definitions which "looked correct".
 A first draft looked something like this:
+
 ```python
 # Flamestrike
 class CS2_032:
