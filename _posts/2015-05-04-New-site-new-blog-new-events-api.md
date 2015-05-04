@@ -54,7 +54,7 @@ Of course, all those selectors were prefabricated, so it actually looks like `RA
 The `Affiliation` enum was special-built for selectors. In addition to it was another special
 `TargetingRequirement` enum which was quickly replaced by simply accepting the `GameTag` enum and looking at
 whether such tags were present. It is used to select damaged characters, cards with deathrattles, overload cards, etc.
-
+i
 
 ### Actions and Events
 
@@ -68,7 +68,7 @@ quite a bit on whether some actions existed as "actions", or were merely an elab
 
 It is on the plane back home that I started to realize that my event subsystem could be rewritten in terms of actions.
 In other words, "Heal a random minion" and "Whenever a friendly minion is healed" would match, and I could
-express the two the same way: `Damage(RANDOM_MINION, 2)`, `Heal(FRIENDLY_MINIONS)`.
+express the two the same way: `Heal(RANDOM_MINION, 2)`, `Heal(FRIENDLY_MINIONS)`.
 
 I actually did implement it that way. I was somewhat surprised, but such is the power of declarative code.
 When we queue the Action object in the game, we actually make the source trigger the action of
