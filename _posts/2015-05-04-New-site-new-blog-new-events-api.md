@@ -111,4 +111,6 @@ Next up will be more tests for some elaborate setups I don't fully support yet, 
 set to implement. Defining cards has become exceedingly easy now with extremely powerful selectors, flexible
 events and, should I need it, a way to fall back to the procedural APIs from within card definitions.
 
+[37 files changed, 905 insertions(+), 688 deletions(-)](https://github.com/jleclanche/fireplace/compare/c6bc99bdbeab...5b7d6a922039)
+
 Jerome
