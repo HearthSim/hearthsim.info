@@ -14,7 +14,7 @@ Deathrattle of "Draw a card" shouldn't be different. For this, I previously wrot
 which would let me define cards such as `deathrattle = drawCard`, or `action = drawCards(2)`, etc.
 
 This had a lot of shortcomings. First one being that I would have to define new helpers for every
-different target I had to deal with. In essence, "Heal the your hero for 5" and
+different target I had to deal with. In essence, "Heal your hero for 5" and
 "Heal the enemy hero for 5" were completely different.
 In addition to that, it was fairly hard to select targets. Targeting is a huge part of Hearthstone's
 cards.
