@@ -17,6 +17,7 @@ and a player target (whose deck it will go in). The card target is interesting, 
 
 Malorne and Recycle were straightforward.
 The Hand to Deck logic was simple as well, as targeting an entire hand is very simple:
+
 ```python
 # Hand to Deck
 class XXX_042:
@@ -24,6 +25,7 @@ class XXX_042:
 ```
 
 Iron Juggernaut was more fun, because we implement shuffling a card we just created, just like `Summon()` works:
+
 ```python
 # Iron Juggernaut
 class GVG_056:
@@ -34,6 +36,7 @@ Gang Up, however, doesn't shuffle a card but *copies* of a card.
 I could have written it procedurally, but it pushed me to implement a `Copy()` evaluator, which was on the TODO list
 for cards such as Thoughtsteal and Mind Vision.
 This is the final version of Gang Up:
+
 ```python
 # Gang Up
 class BRM_007:
@@ -49,6 +52,7 @@ the cards retain all their buffs and extra tags (damage, silence, ...).
 I decided not to implement deep copies for now. I still haven't decided whether it should be a separate action or not.
 
 The Copy action greatly simplified existing cards. Let's look at the old Thoughtsteal:
+
 ```python
 # Thoughtsteal
 class EX1_339:
@@ -59,6 +63,7 @@ class EX1_339:
 ```
 
 This is now:
+
 ```python
 class EX1_339:
 	action = [Give(CONTROLLER, Copy(RANDOM(OPPONENT_DECK + MINION) * 2))]
@@ -86,6 +91,7 @@ class EX1_345:
 ```
 
 Which became:
+
 ```python
 class EX1_345:
 	action = [Summon(CONTROLLER, Copy(RANDOM(OPPONENT_DECK + MINION) | "EX1_345t"))]
@@ -106,3 +112,5 @@ class GVG_005:
 ```
 
 [12 files changed, 141 insertions(+), 49 deletions(-)](https://github.com/jleclanche/fireplace/compare/d79c1e10e68c625da910ee1bca3f32a4516fa479...56b97a3da978513a03ff291e43f10dbe759bd8d1)
+
+Jerome
