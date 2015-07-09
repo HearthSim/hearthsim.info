@@ -5,9 +5,9 @@ Are you interested? Come join us on the `#Hearthsim` IRC channel on the [Freenod
 Our main projects:
 
  * [Fireplace](https://github.com/jleclanche/fireplace) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python.
- * [Hearthbreaker](https://github.com/danielyule/hearthbreaker) is a Hearthstone simulator in Python and also implements all the cards.
+ * [Hearthbreaker](https://github.com/danielyule/hearthbreaker) is another Hearthstone simulator in Python.
  * [Hearthy](https://github.com/HearthSim/Hearthy) is a Python framework for interacting with the Hearthstone protocol. It includes server-to-simulator communication logic.
-
+ * [Hearthstone Science](https://www.youtube.com/channel/UCmjH4ksu6DqwFj1SIvTm61w), a video series about experimentation with Hearthstone's mechanics. Findings are documented in the [Advanced Rulebook wiki page](http://hearthstone.gamepedia.com/Advanced_rulebook).
 
 Some of our other projects:
 
@@ -17,4 +17,4 @@ Some of our other projects:
  * [CSharp-Proto-Extractor](https://github.com/HearthSim/csharp-proto-extractor) is a [ProtoBuf](https://developers.google.com/protocol-buffers/) extractor for protobufs compiled with [protobuf-csharp-port](https://code.google.com/p/protobuf-csharp-port/wiki/GettingStarted) (which Hearthstone uses)
 
 
-We also have a low-frequency mailing list on [Google Groups](https://groups.google.com/forum/#!forum/hearthstone-simulator-dev). However, development is mostly discussed in the #hearthsim channel.
+Everything happens in the #hearthsim IRC channel. Older discussions are still available in the previous [Google Groups mailing list](https://groups.google.com/forum/#!forum/hearthstone-simulator-dev).
