@@ -7,7 +7,7 @@ Our main projects:
  * [Fireplace](https://github.com/jleclanche/fireplace) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python.
  * [Hearthbreaker](https://github.com/danielyule/hearthbreaker) is another Hearthstone simulator in Python.
  * [Hearthy](https://github.com/HearthSim/Hearthy) is a Python framework for interacting with the Hearthstone protocol. It includes server-to-simulator communication logic.
- * [Hearthstone Science](https://www.youtube.com/channel/UCmjH4ksu6DqwFj1SIvTm61w), a video series about experimentation with Hearthstone's mechanics. Findings are documented in the [Advanced Rulebook wiki page](http://hearthstone.gamepedia.com/Advanced_rulebook).
+ * [Hearthstone Science](https://www.youtube.com/channel/HearthstoneScience), a video series about experimentation with Hearthstone's mechanics. Findings are documented in the [Advanced Rulebook wiki page](http://hearthstone.gamepedia.com/Advanced_rulebook).
 
 Some of our other projects:
 

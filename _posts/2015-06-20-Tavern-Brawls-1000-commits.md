@@ -8,21 +8,21 @@ I just pushed the 1000th commit in [Fireplace](https://github.com/jleclanche/fir
 I started the project almost a year ago.
 The [initial commit](https://github.com/jleclanche/fireplace/commit/c144d1b37e2872383217946c94d713cec358cfec)
 had support for creating `Game`, `Player` and `Deck` objects and would get you as far as `Game.start()`.
-It was a glorified card shuffler and was based on the data from [HearthstoneJSON.com](http://hearthstonejson.com/). 
+It was a glorified card shuffler and was based on the data from [HearthstoneJSON.com](http://hearthstonejson.com/).
 
 It has been almost a year since I started the project. Fireplace now supports most cards and mechanics in the game,
 although some of the more elaborate bits are still missing.
 
 The Hearthsim community is flourishing. Patashu, one of our members, has been publishing
-["Hearthstone Science" videos](https://www.youtube.com/user/Patashu/videos) which have grown quite popular.
+["Hearthstone Science" videos](https://www.youtube.com/c/HearthstoneScience) which have grown quite popular.
 The [4/11 Twilight Drake setup](https://www.youtube.com/watch?v=ZKf8WId7N0Q) is my personal favourite, due to how
 elaborate it is, and after coming up with it late at night, unable to sleep.
 
 I'm also very happy to see that Team 5 continues to be so open and forward with its community. Hearthstone still
 feels like an indie game in many ways. I hope this continues, because I have recently started work on
 [Stove](https://github.com/hearthsim/stove), a Pegasus-compatible server in Go that will run Fireplace as its
-simulation server. Early days and little time to work on it though, full-blown Fireplace games on the official 
-client are still a long way off. 
+simulation server. Early days and little time to work on it though, full-blown Fireplace games on the official
+client are still a long way off.
 
 Very recently, Blizzard released [Tavern Brawl](http://hearthstone.gamepedia.com/Tavern_Brawl), a new
 Player vs. Player game mode featuring unique cards and decks. Some of the mechanics and interactions featured
