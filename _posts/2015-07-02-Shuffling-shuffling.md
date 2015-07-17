@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Shuffling, shuffling...
+permalink: /blog/shuffling-shuffling/
 ---
 
 The latest action I had to implement is `Shuffle()`. As in, "Shuffle a card into a deck".

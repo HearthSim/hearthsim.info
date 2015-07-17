@@ -1,6 +1,7 @@
 ---
 layout: post
 title: New site, new blog, new events API
+permalink: /blog/new-site-new-blog-new-events-api/
 ---
 
 The [Hearthsim.info](http://hearthsim.info) site is now ready. With it is this blog which will
