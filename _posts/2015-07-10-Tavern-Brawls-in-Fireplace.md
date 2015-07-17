@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tavern Brawls in Fireplace
+permalink: /blog/tavern-brawls-in-fireplace/
 ---
 
 This has been a fun couple of weeks with commits from two new contributors!

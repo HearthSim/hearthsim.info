@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tavern Brawls, 1000 commits.
+permalink: /blog/tavern-brawls-1000-commits/
 ---
 
 I just pushed the 1000th commit in [Fireplace](https://github.com/jleclanche/fireplace).
