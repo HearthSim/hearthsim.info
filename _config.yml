@@ -18,16 +18,10 @@ avatar: https://raw.githubusercontent.com/hearthsim/hearthsim.github.io/master/i
 # Includes an icon in the footer for each username you enter
 footer-links:
   email: contact@hearthsim.info
-  facebook:
-  flickr:
   github: HearthSim
-  instagram:
-  linkedin:
-  pinterest:
-  rss: "yes" # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: jekyllrb
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: channel/HearthstoneScience # channel/<your_long_string> or user/<user-name>
+  rss: true
+  twitter:
+  youtube: c/HearthstoneScience
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
