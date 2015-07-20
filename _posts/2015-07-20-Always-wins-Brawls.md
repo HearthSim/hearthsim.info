@@ -164,7 +164,7 @@ But really, I am writing this to talk about the regular kind of Brawls.
 [Dark Iron Bouncer](http://hearthstone.gamepedia.com/Dark_Iron_Bouncer) has been implemented, using a custom
 `ALWAYS_WINS_BRAWLS` tag, which got its own selector. And now, the Brawl spell looks like this:
 
-```
+```python
 # Brawl
 class EX1_407:
 	play = (
