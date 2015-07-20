@@ -153,11 +153,13 @@ class BRM_017:
 	play = Summon(CONTROLLER, Copy(RANDOM(FRIENDLY + KILLED + MINION)))
 ```
 
-Phew. That was a *lot* of changes. This week's Tavern Brawl was
+Phew. That was a *lot* of changes.
+
+This week's Tavern Brawl was
 [very easy to implement](https://github.com/jleclanche/fireplace/blob/d551aad06175ab2f3d2686979a53a8c0b763be13/fireplace/brawls/__init__.py#L133-L151).
 I thought it was a bit boring as a Tavern Brawl, but an excellent idea for a more "permanent" game mode.
 
-But really, I am writing this about the regular kind of Brawls.
+But really, I am writing this to talk about the regular kind of Brawls.
 
 [Dark Iron Bouncer](http://hearthstone.gamepedia.com/Dark_Iron_Bouncer) has been implemented, using a custom
 `ALWAYS_WINS_BRAWLS` tag, which got its own selector. And now, the Brawl spell looks like this:
