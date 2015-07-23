@@ -19,9 +19,10 @@ The other main focus was on the Fireplace DSL... which now looks *a lot* more li
 version 3 now.
 
 The major changes are:
+
  * `action` has been renamed to `play`.
  * Sequences now support single actions, as well as falsy values in the case of callables
- 
+
 For example, this:
 
 ```python
@@ -57,7 +58,7 @@ events = Play(OPPONENT, SPELL).on(
 	)
 )
 ```
- 
+
 Together, these changes affect almost every single card. [Big diffs](https://github.com/jleclanche/fireplace/commit/7cf5dba495a1c9a0718140d3d8f88864c2c3bb98)!
 
 New functions are also available in the DSL.
@@ -79,7 +80,7 @@ class EX1_409:
 		Buff(FRIENDLY_WEAPON, "EX1_409e") |
 		Summon(CONTROLLER, "EX1_409t")
 	)
-	
+
 # Tinkertown Technician
 class GVG_102:
 	play = (Find(FRIENDLY_MINIONS + MECH) & (
