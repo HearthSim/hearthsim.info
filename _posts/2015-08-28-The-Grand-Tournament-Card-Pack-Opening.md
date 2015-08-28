@@ -5,10 +5,27 @@ permalink: /blog/the-grand-tournament-card-pack-opening/
 published: false
 ---
 
-The stats are in! A huge thank you to everybody who contributed. We have received almost 300 submissions with a total of **15298 card packs**!
-Of those card packs, 323 were non-TGT card packs and have been ignored for the purposes of this study.
+The stats are in! A huge thank you to everybody who contributed. We have received almost 300 submissions with a total of **15432 card packs**!
 
 The largest card pack purchase was of **1290 packs**. It took 3 hours and 4 minutes to open that many packs.
+
+In total, the card packs accounted for **_ dust**.
+
+Nobody got a golden [Mistcaller](http://hearthstone.gamepedia.com/The_Mistcaller).
+
+
+### Best pack
+
+The best pack was obtained by Rog, who purchased 89 card packs.
+It contained:
+ * Golden Acidmaw (Legendary)
+ * Golden Dreadsteed (Epic)
+ * Golden Dragonhawk Rider (Common)
+ * Bear Trap (Common)
+ * Tuskarr Totemic (Common)
+
+Total worth: **2060 dust**. There were only three packs submitted with a worth of over 2000 dust.
+
 
 ### Rarity distribution
 
@@ -57,7 +74,10 @@ This is therefore the dust you can expect from your pack purchases, if you have 
 * 50 packs: 4915 dust
 * 60 packs: 5898 dust
 
-Now, this number is a bit boring, because it assumes you already have all the cards, including all goldens. And if you do, why are you buying packs?
+
+### Pack simulations
+
+Now, this previous number is a bit boring, because it assumes you already have all the cards, including all goldens. And if you do, why are you buying packs?
 
 It's more interesting to see what the expected *crafting* value is, and plot it against your collection as it grows.
 In the following graph, we explore the average expected value of a pack, from an empty TGT collection to a full one:
@@ -65,19 +85,22 @@ In the following graph, we explore the average expected value of a pack, from an
 * Expected crafting value: How much dust crafting value you save by purchasing a pack (down towards 0 for a full collection)
 * Expected dust: How much actual dust you will get on average by purchasing a patch (up from 0 for an empty collection)
 
-<!-- GRAPH -->
 
-### Best pack
+<img src="https://raw.githubusercontent.com/HearthSim/hearthsim.github.io/master/media/tgt-packs-dust-avg-graph.png"/>
 
-The best pack was obtained by Rog, who purchased 89 card packs.
-It contained:
- * Golden Acidmaw (Legendary)
- * Golden Dreadsteed (Epic)
- * Golden Dragonhawk Rider (Common)
- * Bear Trap (Common)
- * Tuskarr Totemic (Common)
+We found that after acquiring 100-150 packs, the crafting value of a pack plummets below its disenchant value and the majority of packs
+past that will in fact be worthless. However, the average value remains very high due to the extremely high crafting value of golden cards.
 
-Total worth: **2060 dust**. There were only three packs submitted with a worth of over 2000 dust.
+The following scatter graph was created from simulating purchases of 1000 packs.
+The golden points are packs whose value is contributed *entirely* by gold cards (eg. no non-golden value).
+
+<img src="https://raw.githubusercontent.com/HearthSim/hearthsim.github.io/master/media/tgt-packs-scatter-crafting-values.png"/>
+
+Finally, we simulated buying upwards of 25000 packs and looking at the cumulative crafting and disenchant values.
+
+We found that to acquire a complete TGT collection (all gold cards included), you would have to purchase roughly 1250 packs.
+
+<img src="https://raw.githubusercontent.com/HearthSim/hearthsim.github.io/master/media/tgt-packs-cumulative-craft-disenchant-values.png"/>
 
 
 ### Source code and raw data
