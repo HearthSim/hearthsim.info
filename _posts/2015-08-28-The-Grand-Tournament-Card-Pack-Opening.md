@@ -146,7 +146,7 @@ We found that, *on average*, to have a complete TGT collection with all golden a
 
 ## Data and Source Code
 
-A full, curated CSV export of the submitted data is available [here](https://gist.githubusercontent.com/jleclanche/9d3cfa115a2deec6b759/raw/master/export.csv).
+A full, curated CSV export of the submitted data is available [here](https://gist.githubusercontent.com/jleclanche/9d3cfa115a2deec6b759/raw/2806438a31f85d4251eafa544e6544b762e35941/export.csv).
 Each row represents one card and contains a file ID, pack ID it belongs to, a [Card ID](https://github.com/jleclanche/fireplace/wiki/Card-IDs),
 a card set (should always be TGT), card class, rarity, premium type (golden) and a name the submission was credited to.
 
