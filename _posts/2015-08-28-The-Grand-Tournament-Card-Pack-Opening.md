@@ -16,8 +16,8 @@ Across all those packs, every card was opened at least once, except for one:  a 
 
 ### The Best
 
-The best pack by dust value was submitted by Rog.
-It contained:
+The best pack by dust value was submitted by Rog. It contained:
+
  * Golden Acidmaw (Legendary)
  * Golden Dreadsteed (Epic)
  * Golden Dragonhawk Rider (Common)
@@ -101,7 +101,7 @@ Finally, here is the distribution of golden cards overall and across all raritie
 
 We define the value of a card by its *dust value to disenchant*. That value doesn't change as you acquire more cards.
 A pack's value can range from 40 dust (4 commons + 1 rare) to 8,000 dust (5 golden legendaries).
-For scale, the entire TGT collection requires 311920 dust to craft (or 64720 if we exclude golden cards).
+For scale, the entire TGT collection requires 311,920 dust to craft (or 64,720 if we exclude golden cards).
 
 The average dust value of a single card over the dataset is **19.65 dust**.
 A single pack is worth, on average, **98.25 dust**.
