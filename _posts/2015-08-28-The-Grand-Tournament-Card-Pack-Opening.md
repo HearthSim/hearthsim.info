@@ -26,7 +26,7 @@ It contained:
  * Bear Trap (Common)
  * Tuskarr Totemic (Common, OP)
 
-That adds up to a value of **2060 dust**. There were only three packs submitted with a value over 2000 dust.
+That adds up to a value of **2,060 dust**. There were only three packs submitted with a value over 2,000 dust.
 
 ### Drop Rates
 
@@ -48,7 +48,7 @@ Taking into account only the highest rarity card of each pack:
 | Epic      |  19.3130% |
 | Legendary |   5.0301% |
 
-Excluding the highest rarity card from every pack--that is, taking only the least rare four cards of each pack:
+Excluding the highest rarity card from every pack—that is, taking only the least rare four cards of each pack:
 
 | Rarity    | Drop rate |
 |:----------|----------:|
@@ -123,7 +123,7 @@ These graphs explore the expected value of a pack as more and more packs are ope
 
 ![Dust value per pack](/media/tgt-packs-dust-avg-graph.png)
 
-We found that after opening 100 to 150 packs, the median crafting value of a pack plummets below its disenchant value; the majority of packs beyond the first hundred will be nearly worthless.  However, the average value of these later packs remains relatively high because of the extremely high crafting value of golden cards--*WHAT!? GOLDEN LEGENDARY!*
+We found that after opening 100 to 150 packs, the median crafting value of a pack plummets below its disenchant value; the majority of packs beyond the first hundred will be nearly worthless.  However, the average value of these later packs remains relatively high because of the extremely high crafting value of golden cards—*WHAT!? GOLDEN LEGENDARY!*
 
 This scatter plot shows the possible value of each pack for 300 TGT packs starting from a collection with no TGT cards.  The golden points are packs whose crafting value is contributed *entirely* by gold cards, meaning there were no new non-gold cards in the pack.
 
