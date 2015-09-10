@@ -12,6 +12,7 @@ Our simulators:
 
 Our other projects on Github:
 
+ * [python-bna](https://github.com/jleclanche/python-bna) is a python implementation of the Battle.net authenticator, usable as both a command-line authenticator and a library.
  * [Stove](https://github.com/HearthSim/Stove) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
  * [Hearthy](https://github.com/HearthSim/Hearthy) is a Python framework for interacting with the Hearthstone protocol. It includes server-to-simulator communication logic.
  * [UnityHook](https://github.com/HearthSim/UnityHook) is a framework for hooking into [Unity](http://unity3d.com/) games' function calls.
