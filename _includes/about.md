@@ -12,7 +12,8 @@ Our simulators:
 
 Our other projects on Github:
 
- * [HearthstoneJSON.com](http://hearthstonejson.com/) - JSON exports of all the card data in Hearthstone
+ * [Hearthstone Deck Tracker](http://github.com/Epix37/Hearthstone-Deck-Tracker) is a deck/replay tracker and collection manager for Hearthstone.
+ * [HearthstoneJSON.com](http://hearthstonejson.com/) exports all the card data in Hearthstone to JSON to work with more easily than the raw files.
  * [Stove](https://github.com/HearthSim/Stove) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
  * [Hearthy](https://github.com/HearthSim/Hearthy) is a Python framework for interacting with the Hearthstone protocol. It includes server-to-simulator communication logic.
  * [python-bna](https://github.com/jleclanche/python-bna) is a python implementation of the Battle.net authenticator, usable as both a command-line authenticator and a library.
