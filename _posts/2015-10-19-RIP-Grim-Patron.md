@@ -11,7 +11,7 @@ the blog or do further work on Stove. However, there has still been a lot of act
 throughout HearthSim.
 
 
-#### HearthSim projects
+### HearthSim projects
 
 Most recently, both [HearthstoneJSON](https://github.com/hearthsim/hearthstonejson) and
 [Hearthstone Deck Tracker](https://github.com/Epix37/Hearthstone-Deck-Tracker) have
@@ -44,7 +44,7 @@ This allows for both releasing changes in the package on multiple HS builds as w
 supporting new builds without any other change in the code.
 
 
-#### Fireplace work
+### Fireplace work
 
 Activity on Fireplace died down mid-september, but I have been trying to squeeze in some
 minor work as regularly as possible.
@@ -100,7 +100,7 @@ Predamage first (for Ice Block and Bolf, and I suspect Divine Shield too).
 Deaths will also move to that system once I'm happy with how it works.
 
 
-##### DSL changes
+#### DSL changes
 
 The biggest change by far has been the
 [fifth Aura API](https://github.com/jleclanche/fireplace/commit/61f87cf4163f740f6475d0966cf1b76c3b25957b).
