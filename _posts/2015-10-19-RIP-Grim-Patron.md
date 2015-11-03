@@ -87,7 +87,7 @@ experience, especially on Windows. The latter was helped a lot when
 [**@liujimj**](https://github.com/liujimj) contributed a
 [Powershell bootstrap script](https://github.com/jleclanche/fireplace/commit/5fd3b1c149247c98bf8dd9423f34b26f8940e591).
 
-In another "Really? It took that look?" twist, playing minions at an index has now been
+In another "Really? It took that long?" twist, playing minions at an index has now been
 [implemented](https://github.com/jleclanche/fireplace/commit/c5fa2ebe100811487024b7878156005cb585f77f).
 It is a product of continuous design: Work long enough on a project with a hard feature
 in mind, and the feature will eventually materialize itself.
