@@ -84,7 +84,7 @@ Some [slots reworking](https://github.com/jleclanche/fireplace/commit/cfb0ead04e
 has been leading towards a rework of buffing. This is in fact part of a push to get rid
 of the CardXML pre-processing, which has been detrimental to the out-of-the-box
 experience, especially on Windows. The latter was helped a lot when
-[**@liujimj**](https://github.com/liujimj] contributed a
+[**@liujimj**](https://github.com/liujimj) contributed a
 [Powershell bootstrap script](https://github.com/jleclanche/fireplace/commit/5fd3b1c149247c98bf8dd9423f34b26f8940e591).
 
 In another "Really? It took that look?" twist, playing minions at an index has now been
