@@ -23,7 +23,7 @@ best deck in the meta. Players were overjoyed.
 A second round of discontent immediately came about when players realized that
 Warsong Commander would now be unplayable. Not only is it a basic card (and
 therefore one of the few cards new players have access to, which impacts the
-barrier of entry), but it's a **Warrior** basic card, giving it a bonus 25%
+barrier of entry), but it's a **Warrior** basic card, giving it a bonus 100%
 chance to be offered as an arena pick — and the Warrior class is currently, by
 far, the worst in arena.
 
