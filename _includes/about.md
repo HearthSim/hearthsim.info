@@ -10,9 +10,10 @@ Our simulators:
  * [HearthShroud](https://github.com/thomaseding/hearthshroud) is a Haskell-based Hearthstone engine.
  * [Soot](https://github.com/mischanix/soot) is an attempt at building a Clojure-based Hearthstone Card DSL and engine.
 
-Our other projects on Github:
+Our other projects:
 
- * [Hearthstone Deck Tracker](http://github.com/Epix37/Hearthstone-Deck-Tracker) is a deck/replay tracker and collection manager for Hearthstone.
+ * [HSReplay]({{ site.baseurl }}/hsreplay/) is a replay specification, including reference implementations.
+ * [Hearthstone Deck Tracker](http://hsdecktracker.net) is a deck/replay tracker and collection manager for Hearthstone.
  * [HearthstoneJSON.com](http://hearthstonejson.com/) exports all the card data in Hearthstone to JSON to work with more easily than the raw files.
  * [Stove](https://github.com/HearthSim/Stove) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
  * [Hearthy](https://github.com/HearthSim/Hearthy) is a Python framework for interacting with the Hearthstone protocol. It includes server-to-simulator communication logic.
