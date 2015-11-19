@@ -22,8 +22,9 @@ far more tag changes, entity definitions, etc.
 
 ```xml
 <?xml version="1.0" ?>
-<HSReplay version="0.9">
-	<Game ts="02:40:37.6057520">
+<!DOCTYPE hsreplay SYSTEM "http://hearthsim.info/hsreplay/dtd/hsreplay-1.0.dtd">
+<HSReplay version="1.0" build="10833">
+	<Game ts="02:40:37.6057520" type="1">
 		<GameEntity id="1">
 			<Tag tag="20" value="1"/>
 			<Tag tag="49" value="1"/>
