@@ -1,19 +1,15 @@
-#
-# This file contains configuration flags to customize your site
-#
-
-# Name of your site (displayed in the header)
 name: HearthSim
-
-# Short bio or description (displayed in the header)
 description: Hearthstone Simulation & AI
+logo: /images/logo.png
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/HearthSim/hearthsim.github.io/master/images/logo.png
+# Used for Sitemap.xml and RSS feed
+url: http://hearthsim.info
 
-#
-# Flags below are optional
-#
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -30,19 +26,7 @@ disqus:
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url: http://hearthsim.info
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
-
-#
-# !! You don't need to change any of the configuration flags below !!
-#
+# Jekyll configuration
 
 markdown: redcarpet
 highlighter: pygments
@@ -51,10 +35,6 @@ permalink: /blog/:title/
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
-# The release of Jekyll Now that you're using
-version: v1.1.0
-
-# Set the Sass partials directory, as we're using @imports
 sass:
   style: :compressed # You might prefer to minify using :compressed
 
@@ -62,10 +42,8 @@ sass:
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
-# Exclude these files from your production _site
+# Files excluded from production site
 exclude:
-    - Gemfile
-    - Gemfile.lock
     - LICENSE
     - README.md
     - CNAME
