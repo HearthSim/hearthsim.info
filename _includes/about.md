@@ -2,7 +2,7 @@ We are a small community of developers passionate about [Hearthstone](http://pla
 We build simulators and other tools around and for the game.
 
 Are you interested? Come join us on the `#Hearthsim` IRC channel on the
-[Freenode network](https://webchat.freenode.net/).
+[Freenode network](https://webchat.freenode.net/), or join our mirrored room [on Gitter](https://gitter.im/HearthSim).
 
 Our simulators:
 
