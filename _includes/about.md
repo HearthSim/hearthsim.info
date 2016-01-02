@@ -24,7 +24,7 @@ Our tools:
 
  * [python-bna](https://github.com/jleclanche/python-bna) is a python implementation of the Battle.net authenticator, usable as both a command-line authenticator and a library.
  * [Hearthy](https://github.com/HearthSim/Hearthy) is a Python framework for interacting with the Hearthstone protocol. It includes server-to-simulator communication logic.
- * [UnityHook](https://github.com/HearthSim/UnityHook) is a framework for hooking into [Unity](http://unity3d.com/) games' function calls.
+ * [UnityHook](https://github.com/HearthSim/UnityHook) is a framework for hooking into [Unity](https://unity3d.com/) games' function calls.
  * [CSharp-Proto-Extractor](https://github.com/HearthSim/csharp-proto-extractor) is a [ProtoBuf](https://developers.google.com/protocol-buffers/) extractor for protobufs compiled with [protobuf-csharp-port](https://github.com/jskeet/protobuf-csharp-port) and [SilentOrbit's Protobufs](https://github.com/hultqvist/ProtoBuf) (which Hearthstone uses)
 
 Resources we work on:
