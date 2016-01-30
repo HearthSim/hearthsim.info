@@ -32,6 +32,6 @@ Resources we work on:
  * [Hearthstone Science](https://www.youtube.com/c/HearthstoneScience), a video series about experimentation with Hearthstone's mechanics.
  * The [Hearthstone Gamepedia Wiki](http://hearthstone.gamepedia.com/) is maintained by Hearthsim members and includes work such as the [Advanced Rulebook](http://hearthstone.gamepedia.com/Advanced_rulebook)
 
-Everything happens in the #hearthsim IRC channel. Logs are available [here](https://leclan.ch/irc/hearthsim/).
+Everything happens in the #hearthsim IRC channel. Logs are available [here](http://irc.hearthsim.info/hearthsim/).
 
 Older discussions are still available in the previous [Google Groups mailing list](https://groups.google.com/forum/#!forum/hearthstone-simulator-dev).
