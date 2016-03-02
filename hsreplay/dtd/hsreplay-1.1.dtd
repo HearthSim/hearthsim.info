@@ -1,16 +1,14 @@
 <!--
- ! This is HSReplay 1.0 DTD.
+ ! This is HSReplay 1.1 DTD.
  ! Project page: http://hearthsim.info/hsreplay/
  ! The DTD is available at the following URL:
- ! http://hearthsim.info/hsreplay/dtd/hsreplay-1.0.dtd
+ ! http://hearthsim.info/hsreplay/dtd/hsreplay-1.1.dtd
 -->
 
 <!--
  ! An entity element SHOULD always be an integer representing the entity ID.
- ! However, due to limitations in the Power.log format, player names are
- ! sometimes impossible to reverse back into an entity ID and MAY be used
- ! instead of the entity ID. Also note that they can be "UNKNOWN HUMAN PLAYER"
- ! in case of a logging/connection issue.
+ ! Also note that they can be "UNKNOWN HUMAN PLAYER" in case of a
+ ! logging/connection issue.
 -->
 <!ENTITY % entity "NMTOKEN">
 
@@ -31,8 +29,19 @@
  ! timestamp most relevant to the element.
  ! The attribute SHOULD be omitted for elements which will never have a
  ! different timestamp than their parent element.
+ ! The `ts` attribute on the main Game element represents the time at which
+ ! the game started.
+ ! Timestamps MUST be in ISO8601 datetime format. If only the time is
+ ! available, the date can be inferred from the original file's lastmod or
+ ! the timestamp can be saved in ISO8601 time-only format.
 -->
 <!ENTITY % timestamp "NMTOKEN">
+
+
+<!--
+ ! A card ID (aka a "mini guid")
+-->
+<!ENTITY % cardID "NMTOKEN">
 
 
 <!-- Core tags -->
@@ -49,11 +58,13 @@
 
 <!-- A Hearthstone game
  ! Contains a full or partial Hearthstone game. Begins on CREATE_GAME.
+ ! id: The game's ID (as output by Net.log)
  ! type: A GameType enum value. Optional because it cannot be read directly
  !       from Power.log.
 -->
 <!ELEMENT Game (Action | Choices | ChosenEntities | FullEntity | GameEntity | HideEntity | Options | Player | SendChoices | SendOption | ShowEntity | TagChange)*>
 <!ATTLIST Game
+	id NMTOKEN #IMPLIED
 	type %enumValue; #IMPLIED
 	ts %timestamp; #IMPLIED>
 
@@ -71,14 +82,22 @@
  ! id is the entity id and should not be confused with playerID!
  ! name SHOULD be included - it has to be reversed from followup packets
  ! which carry the player's name instead of ID.
+ ! rank: The player's ladder rank. Should only be filled if available and
+ !       only if the game type is ranked. 25 is Angry Chicken, 1 is Innkeeper
+ !       and 0 is Legend. Defaults to "-1"
+ ! legendRank: The Player's legend ranking at the beginning of the game.
+ ! cardback: The Player's cardback id at the beginning of the game.
 -->
-<!ELEMENT Player (Tag*)>
+<!ELEMENT Player (Tag | Deck)*>
 <!ATTLIST Player
 	id %entity; #REQUIRED
 	playerID NMTOKEN #REQUIRED
 	name CDATA #IMPLIED
 	accountHi NMTOKEN #IMPLIED
 	accountLo NMTOKEN #IMPLIED
+	rank NMTOKEN "-1"
+	legendRank NMTOKEN "0"
+	cardback NMTOKEN "0"
 	ts %timestamp; #IMPLIED>
 
 <!--
@@ -88,11 +107,11 @@
  ! target: The id of the entity being targeted (0 if not provided)
  ! type: A PowSubType enum value representing the type of action performed
 -->
-<!ELEMENT Action (Action | FullEntity | HideEntity | TagChange | MetaData | ShowEntity | Choices | SendChoices)*>
+<!ELEMENT Action (Action | FullEntity | HideEntity | TagChange | MetaData | ShowEntity | Choices | ChosenEntities | SendChoices)*>
 <!ATTLIST Action
 	entity %entity; #REQUIRED
-	index NMTOKEN #IMPLIED
-	target %entity; #IMPLIED
+	index NMTOKEN "-1"
+	target %entity; "0"
 	type %enumValue; #REQUIRED
 	ts %timestamp; #IMPLIED>
 
@@ -130,7 +149,7 @@
 -->
 <!ELEMENT FullEntity (Tag*)>
 <!ATTLIST FullEntity
-	cardID NMTOKEN #IMPLIED
+	cardID %cardID; #IMPLIED
 	id %entity; #REQUIRED
 	ts %timestamp; #IMPLIED>
 
@@ -142,7 +161,7 @@
 -->
 <!ELEMENT ShowEntity (Tag*)>
 <!ATTLIST ShowEntity
-	cardID NMTOKEN #IMPLIED
+	cardID %cardID; #IMPLIED
 	entity %entity; #REQUIRED
 	ts %timestamp; #IMPLIED>
 
@@ -163,25 +182,25 @@
 <!--
  ! Corresponds to META_DATA in Power.log
  ! meta: A MetaDataType enum value
- ! data: An entity definition
+ ! entity: An entity definition (aka "data"). Defaults to 0
  ! info: The info count. SHOULD NOT be included if Info tags are available.
 -->
 <!ELEMENT MetaData (Info*)>
 <!ATTLIST MetaData
 	meta %enumValue; #REQUIRED
-	data %entity; #IMPLIED
+	entity %entity; "0"
 	info NMTOKEN #IMPLIED
 	ts %timestamp; #IMPLIED>
 
 <!--
  ! In verbose mode, Power.log outputs detailed Info for META_DATA packets.
- ! index: The index of the info element
- ! id: The id of the entity in question
+ ! index: The index of the info element. Only needed if not ordered.
+ ! entity: The id of the entity in question
  -->
 <!ELEMENT Info EMPTY>
 <!ATTLIST Info
-	index NMTOKEN #REQUIRED
-	id %entity; #REQUIRED
+	index NMTOKEN #IMPLIED
+	entity %entity; #REQUIRED
 	ts %timestamp; #IMPLIED>
 
 
@@ -189,22 +208,22 @@
 
 <!--
  ! Represents data output by DebugPrintEntityChoices() in Power.log
- ! entity: The ID of the entity the choices are presented to
- ! playerID: The player ID of the player the choices are presented to
+ ! id: The ID of the choice
+ ! entity: The entity ID of the player the choices are presented to
  ! taskList: The TaskList element from Power.log (>= 10357) - not needed for replays
  ! type: A ChoiceType enum value representing the type of choice (MULLIGAN vs. GENERAL)
- ! min: The min count of the choices
- ! max: The max count of the choices
+ ! min: The minimum amount of entities that can be chosen
+ ! max: The maximum amount of entities that can be chosen
  ! source: The source of the choices
 -->
 <!ELEMENT Choices (Choice+)>
 <!ATTLIST Choices
+	id NMTOKEN #REQUIRED
 	entity %entity; #REQUIRED
-	playerID NMTOKEN #REQUIRED
 	taskList NMTOKEN #IMPLIED
 	type %enumValue; #REQUIRED
-	min NMTOKEN #IMPLIED
-	max NMTOKEN #IMPLIED
+	min NMTOKEN #REQUIRED
+	max NMTOKEN #REQUIRED
 	source NMTOKEN #REQUIRED
 	ts %timestamp; #IMPLIED>
 
@@ -214,40 +233,36 @@
  ! outbound. Ideally, SendChoices will be collapsed into ChosenEntities
  ! but Power.log does not output ChosenEntities for the player who sent
  ! the choices. New in 10357.
- ! entity: The id of the entity that made the choice
- ! playerID: The player ID of the player that made the choice. Obtained
-   from 'Player' in Power.log, but note this is currently bugged and
-   interprets player IDs as entity IDs...
-   count: The chosen entity count (not required)
+ ! id: The id of the choice
+ ! entity: The entity id of the player who made the choice
 -->
 <!ELEMENT ChosenEntities (Choice*)>
 <!ATTLIST ChosenEntities
+	id NMTOKEN #REQUIRED
 	entity %entity; #REQUIRED
-	playerID NMTOKEN #REQUIRED
-	count NMTOKEN #IMPLIED
 	ts %timestamp; #IMPLIED>
 
 <!--
  ! Represents data output by SendChoices() in Power.log
- ! entity: The id of the entity making the choice
+ ! id: The id of the choice being sent
  ! type: A ChoiceType enum value representing MULLIGAN or GENERAL, eg. Tracking
  ! May contain no choice as not sending a choice is valid, eg. in Mulligan
 -->
 <!ELEMENT SendChoices (Choice*)>
 <!ATTLIST SendChoices
-	entity %entity; #REQUIRED
+	id NMTOKEN #REQUIRED
 	type %enumValue; #REQUIRED
 	ts %timestamp; #IMPLIED>
 
 <!--
  ! Represents a choice, either being proposed or sent
  ! entity: The id of the choice entity
- ! index: The index of the choice in the choice list
+ ! index: The index of the choice in the choice list. Only needed if unordered.
 -->
 <!ELEMENT Choice EMPTY>
 <!ATTLIST Choice
 	entity %entity; #REQUIRED
-	index NMTOKEN #REQUIRED
+	index NMTOKEN #IMPLIED
 	ts %timestamp; #IMPLIED>
 
 
@@ -310,3 +325,29 @@
 	position NMTOKEN "0"
 	target %entity; #IMPLIED
 	ts %timestamp; #IMPLIED>
+
+
+<!--
+ ! Decklist support
+ ! If a player's deck list is available, it can be added to the replay
+ ! by appending it to the Player entity. These are only the cards that
+ ! the player started the game with, in no particular order.
+ ! This must not be added unless the entire deck list is available.
+ ! type: The type of deck (DeckType enum)
+-->
+
+<!ELEMENT Deck (Card+)>
+<!ATTLIST Deck
+	type NMTOKEN #REQUIRED>
+
+<!--
+ ! A card in the player's deck
+ ! id: The card's ID
+ ! premium: determines whether the card is golden (1) or not (0, default)
+ ! count: The amount of cards with that ID and premium in the deck (default 1)
+-->
+<!ELEMENT Card EMPTY>
+<!ATTLIST Card
+	id %cardID; #REQUIRED
+	count NMTOKEN "1"
+	premium NMTOKEN "0">
