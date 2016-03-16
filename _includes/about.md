@@ -4,21 +4,23 @@ We build simulators and other tools around and for the game.
 Are you interested? Come join us on the `#Hearthsim` IRC channel on the
 [Freenode network](https://webchat.freenode.net/), or join our mirrored room [on Gitter](https://gitter.im/HearthSim/HearthSim).
 
-Our simulators:
+Our core projects:
 
- * [Fireplace](https://github.com/jleclanche/fireplace) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python.
- * [Brazier](https://github.com/HearthSim/Brazier) is a simulator written in Java with a JSON-based card format.
- * [Hearthbreaker](https://github.com/danielyule/hearthbreaker) is another Hearthstone simulator in Python.
- * [HearthShroud](https://github.com/thomaseding/hearthshroud) is a Haskell-based Hearthstone engine.
- * [Soot](https://github.com/mischanix/soot) is an attempt at building a Clojure-based Hearthstone Card DSL and engine.
-
-Our other open source projects:
-
+ * [Fireplace](/fireplace/) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python.
  * [HSReplay]({{ site.baseurl }}/hsreplay/) is a replay specification, including reference implementations.
+ * [Stove](/stove/) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
+ * [Joust](/joust/) is a web-based Hearthstone client which supports HSReplay as well as real games through Stove.
  * [Hearthstone Deck Tracker](http://hsdecktracker.net) is a deck/replay tracker and collection manager for Hearthstone.
- * [Arena Tracker](https://github.com/supertriodo/Arena-Tracker) is another deck tracker specially built for Arena.
  * [HearthstoneJSON.com](https://hearthstonejson.com/) exports all the card data in Hearthstone to JSON to work with more easily than the raw files.
- * [Stove](https://github.com/HearthSim/Stove) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
+
+We also host:
+
+ * [Arena Tracker](https://github.com/supertriodo/Arena-Tracker) is another deck tracker specially built for Arena.
+ * [Hearthbreaker](https://github.com/danielyule/hearthbreaker), another Hearthstone simulator in Python.
+ * [HearthShroud](https://github.com/thomaseding/hearthshroud), a Haskell-based Hearthstone engine.
+ * [Brazier](https://github.com/HearthSim/Brazier), a simulator written in Java with a JSON-based card format.
+ * [Soot](https://github.com/mischanix/soot), an attempt at building a Clojure-based Hearthstone Card DSL and engine.
+ * [UnityPack](https://github.com/hearthsim/python-unitypack), a Python library for parsing and deserializing .unity3d files.
 
 Our tools:
 
