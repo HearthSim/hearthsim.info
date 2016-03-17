@@ -25,7 +25,7 @@ If you are interested in reading more about the internals of the Hearthstone pro
 [here](https://github.com/jleclanche/fireplace/wiki/Understanding-the-Hearthstone-Protocol)
 is an article detailing it.
 
-[![Nozdormu](/images/nozdormu.png)](http://hearthstone.gamepedia.com/Nozdormu)
+[![Nozdormu](/media/nozdormu.png)](http://hearthstone.gamepedia.com/Nozdormu)
 
 ## Three solutions
 
@@ -106,7 +106,7 @@ Cons:
 * A Hearthstone icon and unique effect is gone (soul of the cards!)
 * Slushes still needed
 
-[![Custom Nozdormu](/images/nozdormu-fixed.png)](/images/nozdormu-fixed.png)
+[![Custom Nozdormu](/media/nozdormu-fixed.png)](/media/nozdormu-fixed.png)
 
 
 All in all, Nozdormu is not as easy to fix as people would believe. Nothing ever is.
