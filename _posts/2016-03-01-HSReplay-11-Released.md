@@ -51,6 +51,6 @@ It must not be included unless it is fully known.
 
 The DTD for HSReplay 1.1 format is available here:
 
-http://hearthsim.info/hsreplay/dtd/hsreplay-1.1.dtd
+<http://hearthsim.info/hsreplay/dtd/hsreplay-1.1.dtd>
 
 Jerome
