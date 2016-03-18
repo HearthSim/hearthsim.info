@@ -28,12 +28,17 @@ google_analytics:
 
 # Jekyll configuration
 
-markdown: redcarpet
-highlighter: pygments
 permalink: /blog/:title/
 
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+markdown: kramdown
+kramdown:
+  # Use Github Flavored Markdown (including triple backticks)
+  input: GFM
+  extensions: ["autolink"]
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+  # Reuse pygments syntax css class
+    css_class: "highlight"
 
 sass:
   style: :compressed # You might prefer to minify using :compressed
