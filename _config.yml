@@ -34,7 +34,6 @@ markdown: kramdown
 kramdown:
   # Use Github Flavored Markdown (including triple backticks)
   input: GFM
-  extensions: ["autolink"]
   syntax_highlighter: rouge
   syntax_highlighter_opts:
   # Reuse pygments syntax css class
