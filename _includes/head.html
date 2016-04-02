@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/styles/style.css"/>
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml"/>
+<link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% if page.excerpt %}
+	<meta name="description" content="{{ page.excerpt|strip_html }}">
+	<meta property="og:description" content="{{ page.excerpt|strip_html }}">
+{% else %}
+	<meta name="description" content="{{ site.description }}">
+	<meta property="og:description" content="{{ site.description }}">
+{% endif %}
