@@ -274,14 +274,11 @@ nav {
 	}
 }
 
-.wrapper-footer {
-	margin-top: 50px;
+footer {
+	background-color: $lightGray;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
-	background-color: $lightGray;
-}
-
-footer {
+	margin-top: 50px;
 	padding: 20px 0;
 	text-align: center;
 }
