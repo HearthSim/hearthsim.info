@@ -5,8 +5,7 @@ permalink: /blog/dsls-stove-and-the-grand-tournament/
 ---
 
 Another very busy week in Fireplace!
-New contributor [@beheh](https://github.com/beheh) is joining us and already
-contributed dozens of new tests.
+New contributor @beheh is joining us and already contributed dozens of new tests.
 
 Part of that work involved implementing an easy way to
 [create an "empty" game](https://github.com/jleclanche/fireplace/commit/48870e0088ee2c9924c240cff57bc9a7857adc76)
@@ -28,10 +27,10 @@ goes anyway.
 
 ### DSL changes
 
-Contributed by [@zakum42](https://github.com/zakum42), the
+Contributed by @zakum42, the
 [RandomNumber LazyNum](https://github.com/jleclanche/fireplace/commit/5c183f8dea0adfe9072f28147abfbeb4e27ec99f)
 which allows for elegantly implementing cards such as
-[Lightning Storm]():
+[Lightning Storm](http://hearthstone.gamepedia.com/Lightning_Storm):
 
 ```python
 play = Hit(ENEMY_MINIONS, RandomNumber(2, 3))
