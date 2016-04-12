@@ -34,6 +34,7 @@ markdown: kramdown
 kramdown:
   # Use Github Flavored Markdown (including triple backticks)
   input: GFM
+  hard_wrap: false  # No linebreak on newlines unless explicitly specified
   syntax_highlighter: rouge
   syntax_highlighter_opts:
   # Reuse pygments syntax css class
