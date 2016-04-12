@@ -25,13 +25,12 @@ bugs using a much  saner interface than a... wiki. Incidentally, it has proven i
 quite popular since it allows for easy references to known issues and lets us track
 whether bugs have been fixed and if so, when.
 
-[**@Xinhuan**](https://github.com/Xinhuan) has created a
-[CardBot](https://github.com/hearthsim/cardbot) for the IRC channel. It allows quickly
-finding details on cards with `!card <id>`, `!card <name>` or `!card <partial-match>`.
-[Join our channel](/about) to try it out! :)
+@Xinhuan has created a [CardBot](https://github.com/hearthsim/cardbot) for the IRC
+channel. It allows quickly finding details on cards with `!card <id>`, `!card <name>`
+or `!card <partial-match>`. [Join our channel](/about) to try it out! :)
 
-With the help of [**@Epix37**](https://github.com/Epix37), we have done a lot of work on
-the [HSReplay](https://github.com/hearthsim/HSReplay) spec which I have just finished
+With the help of @Epix37, we have done a lot of work on the
+[HSReplay](https://github.com/hearthsim/HSReplay) spec which I have just finished
 licensing as CC0 (implementations MIT). At this point, they are essentially complete and
 heavily battle-tested. This means they will be bumped to 1.0 very soon, which will
 feature an official announcement on this blog.
@@ -83,8 +82,7 @@ usable and can catch issues.
 Some [slots reworking](https://github.com/jleclanche/fireplace/commit/cfb0ead04e40dc06641e328a99b4aa546f0950ea)
 has been leading towards a rework of buffing. This is in fact part of a push to get rid
 of the CardXML pre-processing, which has been detrimental to the out-of-the-box
-experience, especially on Windows. The latter was helped a lot when
-[**@liujimj**](https://github.com/liujimj) contributed a
+experience, especially on Windows. The latter was helped a lot when @liujimj contributed a
 [Powershell bootstrap script](https://github.com/jleclanche/fireplace/commit/5fd3b1c149247c98bf8dd9423f34b26f8940e591).
 
 In another "Really? It took that long?" twist, playing minions at an index has now been
@@ -92,12 +90,12 @@ In another "Really? It took that long?" twist, playing minions at an index has n
 It is a product of continuous design: Work long enough on a project with a hard feature
 in mind, and the feature will eventually materialize itself.
 
-Finally, delayed event triggering is a new model [**@Patashu**](https://github.com/Patashu)
-and I have been testing. I am very happy with it and have implemented it in Fireplace
+Finally, delayed event triggering is a new model @Patashu and I have been testing.
+I am very happy with it and have implemented it in Fireplace
 for [Heal()](https://github.com/jleclanche/fireplace/commit/e6832a81c7d7127a6e6b3b0734c48427507f8c63).
-Damage still has to be implemented but there is some design work to finish on
-Predamage first (for Ice Block and Bolf, and I suspect Divine Shield too).
-Deaths will also move to that system once I'm happy with how it works.
+Damage still has to be implemented but there is some design work to finish on Predamage
+first (for Ice Block and Bolf, and I suspect Divine Shield too). Deaths will also move
+to that system once I'm happy with how it works.
 
 
 #### DSL changes

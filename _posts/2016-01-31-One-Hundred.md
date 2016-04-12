@@ -19,9 +19,8 @@ be translated to something generic.
 I want to thank all the folks over in the
 [#Hearthsim channel](https://webchat.freenode.net/?channels=hearthsim). Without all the
 helpfulness of the community, I would have abandoned long ago. A special shout out to
-[@beheh](https://github.com/beheh) for his contributions on Fireplace itself, and to
-[@Patashu](https://github.com/Patashu) for creating the Hearthstone Science series that
-helped the community grow so much.
+@beheh for his contributions on Fireplace itself, and to @Patashu for creating the
+Hearthstone Science series that helped the community grow so much.
 
 Big announcements to follow. *Soon*.
 

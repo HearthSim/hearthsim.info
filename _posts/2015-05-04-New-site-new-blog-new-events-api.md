@@ -35,8 +35,8 @@ class GVG_043:
 ```
 
 I then stubbed every type of action I could think of or find. Having hundreds of failing tests
-for several days was fairly demoralizing, but with the help of **[@mischanix](https://github.com/mischanix)**,
-a very high quality selector engine was put in place.
+for several days was fairly demoralizing, but with the help of @mischanix, a very high quality
+selector engine was put in place.
 
 One of the early changes to it was the way selectors would chain. When I first designed them,
 they were a mere bitmask, building off earlier work I had done to implement a getTargets method to players.

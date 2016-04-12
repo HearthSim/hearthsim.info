@@ -13,7 +13,7 @@ Fireplace's documentation was mostly outdated since the last event rewrite.
 I'm not done with it; I would like to have the DSL fully documented before doing an official public release.
 
 The [implemented.py](https://github.com/jleclanche/fireplace/blob/d551aad06175ab2f3d2686979a53a8c0b763be13/tests/implemented.py)
-script has also been improved, building on [@laiqu](https://github.com/laiqu)'s work, and is very reliable now.
+script has also been improved, building on the work of @laiqu, and is very reliable now.
 
 The other main focus was on the Fireplace DSL... which now looks *a lot* more like a real DSL. It is officially on
 version 3 now.
