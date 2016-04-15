@@ -10,7 +10,7 @@ Our core projects:
  * [HSReplay]({{ site.baseurl }}/hsreplay/) is a replay specification, including reference implementations.
  * [Stove](/stove/) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
  * [Joust](/joust/) is a web-based Hearthstone client which supports HSReplay as well as real games through Stove.
- * [Hearthstone Deck Tracker](http://hsdecktracker.net) is a deck/replay tracker and collection manager for Hearthstone.
+ * [Hearthstone Deck Tracker](https://hsdecktracker.net) is a deck/replay tracker and collection manager for Hearthstone.
  * [HearthstoneJSON.com](https://hearthstonejson.com/) exports all the card data in Hearthstone to JSON to work with more easily than the raw files.
 
 We also host:
