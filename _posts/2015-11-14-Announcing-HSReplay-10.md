@@ -27,8 +27,4 @@ who wants to work on or with replay files to send us an email at
 integrate them and improve the spec further.
 Yes, Blizzard, this goes for you too. :)
 
-The DTD for the HSReplay format is available here:
-
-<https://hearthsim.info/hsreplay/dtd/hsreplay-1.0.dtd>
-
 Jerome
