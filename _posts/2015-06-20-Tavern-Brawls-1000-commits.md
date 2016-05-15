@@ -14,7 +14,7 @@ It was a glorified card shuffler and was based on the data from [HearthstoneJSON
 It has been almost a year since I started the project. Fireplace now supports most cards and mechanics in the game,
 although some of the more elaborate bits are still missing.
 
-The Hearthsim community is flourishing. Patashu, one of our members, has been publishing
+The HearthSim community is flourishing. Patashu, one of our members, has been publishing
 ["Hearthstone Science" videos](https://www.youtube.com/c/HearthstoneScience) which have grown quite popular.
 The [4/11 Twilight Drake setup](https://www.youtube.com/watch?v=ZKf8WId7N0Q) is my personal favourite, due to how
 elaborate it is, and after coming up with it late at night, unable to sleep.

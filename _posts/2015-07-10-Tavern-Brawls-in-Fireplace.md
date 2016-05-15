@@ -9,7 +9,7 @@ I'm very happy about the generally positive feedback on the quality of Fireplace
 [contributing guidelines](https://github.com/jleclanche/fireplace/commit/d2f8f5a40ee024936177aadad5bbdea04f8be3c1)
 for the occasion.
 
-Since [Tavern Brawls](http://hearthsim.info/Tavern-Brawls-1000-commits/) have come out,
+Since [Tavern Brawls](/blog/tavern-brawls-1000-commits/) have come out,
 I have been focusing on separating rules from the Game object itself.
 [14f7e61](https://github.com/jleclanche/fireplace/commit/14f7e619f4149e69d87e486de63ce160921000ed)
 begins the separation by creating a BaseGame object and removing The Coin (random start) and Mulligan from it.
@@ -46,7 +46,7 @@ This would still be very easy to do, by overriding the `pick()` method which sim
 in the default implementation.
 
 As a sidenote, the [Wild Magic](http://hearthstone.gamepedia.com/Wild_Magic) Hero Power was the original reason
-why I started working on [Shuffle and Copy](http://hearthsim.info/Shuffling-shuffling/).
+why I started working on [Shuffle and Copy](/blog/shuffling-shuffling/).
 Even though they don't look related at first glance, down the line, they led to the implementation of
 [recursive actions](https://github.com/jleclanche/fireplace/compare/706b381f2e3f...9fc8931e51bb) which I used
 for Unstable Portal, and now Wild Magic.

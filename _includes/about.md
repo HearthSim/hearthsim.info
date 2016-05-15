@@ -1,7 +1,7 @@
 We are a small community of developers passionate about [Hearthstone](http://playhearthstone.com).
 We build simulators and other tools around and for the game.
 
-Are you interested? Come join us on the `#Hearthsim` IRC channel on the
+Are you interested? Come join us on the `#hearthsim` IRC channel on the
 [Freenode network](https://webchat.freenode.net/), or join our mirrored room [on Gitter](https://gitter.im/HearthSim/HearthSim).
 
 Our core projects:
@@ -32,7 +32,7 @@ Our tools:
 Resources we work on:
 
  * [Hearthstone Science](https://www.youtube.com/c/HearthstoneScience), a video series about experimentation with Hearthstone's mechanics.
- * The [Hearthstone Gamepedia Wiki](http://hearthstone.gamepedia.com/) is maintained by Hearthsim members and includes work such as the [Advanced Rulebook](http://hearthstone.gamepedia.com/Advanced_rulebook)
+ * The [Hearthstone Gamepedia Wiki](http://hearthstone.gamepedia.com/) is maintained by HearthSim members and includes work such as the [Advanced Rulebook](http://hearthstone.gamepedia.com/Advanced_rulebook)
 
 Everything happens in the #hearthsim IRC channel.
 Logs are available [on Gitter](https://gitter.im/HearthSim/HearthSim).

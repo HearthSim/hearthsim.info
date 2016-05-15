@@ -8,11 +8,11 @@ permalink: /hsreplay/
 
 The DTD for HSReplay 1.1 is available here:
 
-<http://hearthsim.info/hsreplay/dtd/hsreplay-1.1.dtd>
+<https://hearthsim.info/hsreplay/dtd/hsreplay-1.1.dtd>
 
 For development and a reference implementations in Python, see the Github repository:
 
-<https://github.com/hearthsim/hsreplay>
+<https://github.com/HearthSim/hsreplay>
 
 
 ## Example replay
@@ -22,7 +22,7 @@ far more tag changes, entity definitions, etc.
 
 ```xml
 <?xml version="1.0" ?>
-<!DOCTYPE hsreplay SYSTEM "http://hearthsim.info/hsreplay/dtd/hsreplay-1.1.dtd">
+<!DOCTYPE hsreplay SYSTEM "https://hearthsim.info/hsreplay/dtd/hsreplay-1.1.dtd">
 <HSReplay version="1.1">
 	<Game id="41025571">
 		<GameEntity id="1">

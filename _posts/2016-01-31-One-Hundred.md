@@ -17,7 +17,7 @@ remain are either unreleased Tavern Brawls or encounter-specific scripting which
 be translated to something generic.
 
 I want to thank all the folks over in the
-[#Hearthsim channel](https://webchat.freenode.net/?channels=hearthsim). Without all the
+[#hearthsim channel](https://webchat.freenode.net/?channels=hearthsim). Without all the
 helpfulness of the community, I would have abandoned long ago. A special shout out to
 @beheh for his contributions on Fireplace itself, and to @Patashu for creating the
 Hearthstone Science series that helped the community grow so much.

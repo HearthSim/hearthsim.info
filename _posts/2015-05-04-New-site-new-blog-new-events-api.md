@@ -4,7 +4,7 @@ title: New site, new blog, new events API
 permalink: /blog/new-site-new-blog-new-events-api/
 ---
 
-The [Hearthsim.info](http://hearthsim.info) site is now ready. With it is this blog which will
+The [HearthSim.info](https://hearthsim.info) site is now ready. With it is this blog which will
 hopefully serve for development updates on Fireplace and more.
 
 The past weeks have been very heavy on refactoring. Card definitions went from being completely

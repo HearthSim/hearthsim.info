@@ -1,3 +1,3 @@
-[HearthSim.info](http://hearthsim.info)
+[HearthSim.info](https://hearthsim.info)
 
-Powered by [jekyll-now](https://github.com/barryclark/jekyll-now/commits/master)
+Based on [jekyll-now](https://github.com/barryclark/jekyll-now/commits/master)
