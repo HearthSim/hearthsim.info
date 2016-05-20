@@ -8,7 +8,8 @@
 @import "reset";
 @import "variables";
 @import "entry";
-// Syntax highlighting @import is at the bottom of this file
+@import "highlights";
+@import "svg-icons";
 
 
 /**************/
@@ -136,12 +137,12 @@ img {
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-		content: " ";
-		display: table;
+	content: " ";
+	display: table;
 }
 
 .clearfix:after {
-		clear: both;
+	clear: both;
 }
 
 /*********************/
@@ -282,8 +283,3 @@ footer {
 	padding: 20px 0;
 	text-align: center;
 }
-
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	{% include head.html %}
+{% include head.html %}
 </head>
 <body>
 	<div class="wrapper-masthead">
 		<div class="container">
 			<header class="masthead clearfix">
-				<a href="{{ site.baseurl }}/" class="site-logo"><img src="{{ site.logo }}"/></a>
+				<a href="{{ site.baseurl }}/" class="site-logo"><img src="{{ site.vars.logo }}"/></a>
 
 				<div class="site-info">
-					<h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-					<p class="site-description">{{ site.description }}</p>
+					<h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.vars.name }}</a></h1>
+					<p class="site-description">{{ site.vars.description }}</p>
 				</div>
 
 				<nav>

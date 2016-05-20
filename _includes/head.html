@@ -1,13 +1,19 @@
 <meta charset="utf-8">
-<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/styles/style.css"/>
-<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml"/>
-<link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png"/>
+<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.vars.name }} – {{ site.vars.description }}</title>
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png"/>
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/static/styles/style.css"/>
+<link rel="alternate" type="application/rss+xml" title="{{ site.vars.name }}" href="{{ site.baseurl }}/feed.xml"/>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta property="og:site_name" content="{{ site.vars.name }}">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.vars.logo }}"/>
+<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+{% if page.title %}<meta property="og:title" content="{{ page.title }}"/>{% endif %}
 {% if page.excerpt %}
 	<meta name="description" content="{{ page.excerpt|strip_html }}">
 	<meta property="og:description" content="{{ page.excerpt|strip_html }}">
-{% else %}
-	<meta name="description" content="{{ site.description }}">
-	<meta property="og:description" content="{{ site.description }}">
+{% elsif site.vars.description %}
+	<meta name="description" content="{{ site.vars.description }}">
+	<meta property="og:description" content="{{ site.vars.description }}">
 {% endif %}
+{% if site.vars.google_analytics %}{% include analytics.html %}{% endif %}

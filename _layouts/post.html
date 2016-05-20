@@ -4,13 +4,11 @@ layout: default
 
 <article class="post">
 	<h1>{{ page.title }}</h1>
-	<time class="date" datetime="{{page.date | date_to_xmlschema}}">
+	<time class="date" datetime="{{ page.date | date_to_xmlschema }}">
 		Written on {{ page.date | date: "%Y-%m-%d" }}
 	</time>
 
 	<div class="entry">
 		{{ content }}
 	</div>
-
-	{% include disqus.html %}
 </article>
