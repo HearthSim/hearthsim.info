@@ -9,3 +9,5 @@ ReactJS.
 
 It supports playing real games with [Kettle](/kettle/), or viewing replays
 saved as [HSReplay](/hsreplay/) files.
+
+[Source code](https://github.com/HearthSim/joust/)

@@ -12,3 +12,5 @@ including a declarative DSL in Python.
 Fireplace ships a builtin [Kettle](/kettle/) server, which lets it communicate
 with the real Hearthstone client through [Stove](/stove/), or play games with
 the [Joust](/joust/) web interface.
+
+[Source code](https://github.com/jleclanche/fireplace/)
