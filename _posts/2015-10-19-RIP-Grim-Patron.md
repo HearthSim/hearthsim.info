@@ -118,7 +118,7 @@ and [Spellbender](https://github.com/jleclanche/fireplace/commit/4435b5df45179f9
 
 `Buff()` now [accepts `**kwargs`](https://github.com/jleclanche/fireplace/commit/333207d3ba4489fae95cbaf4f5b48681e086b5f1).
 
-[**@beheh**](https://github.com/beheh) reworked mana gains and implemented the
+@beheh reworked mana gains and implemented the
 [`GainEmptyMana()` action](https://github.com/jleclanche/fireplace/commit/70db40ccf5d73336ad1fe16fc9343c3b970aea6b).
 This removes the need to call `FillMana()` after `GainMana()`. Instead, `GainMana()`
 stands for "Gain a Mana Crystal" and `GainEmptyMana()` stands for "Gain an empty Mana

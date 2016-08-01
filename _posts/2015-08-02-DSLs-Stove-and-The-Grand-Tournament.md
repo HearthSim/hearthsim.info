@@ -129,11 +129,10 @@ I even had to update my [StormLib Python bindings](https://github.com/HearthSim/
 for the occasion, so I moved them to the HearthSim organization as well.
 
 Most of all this work comes from the needs of [Stove](https://github.com/HearthSim/stove),
-the Hearthstone server [@mischanix](https://github.com/mischanix) and I are
-currently working on. I am really happy with the progress on it. We have a lot
-of the main menu implemented, including collection management and booster packs.
-Everything is running on top of a SQLite database which automatically imports
-most of its contents from the aforementioned hs-data DBFs.
+the Hearthstone server @mischanix and I are currently working on. I am really happy with
+the progress on it. We have a lot of the main menu implemented, including collection
+management and booster packs. Everything is running on top of a SQLite database which
+automatically imports most of its contents from the aforementioned hs-data DBFs.
 
 What a month July was.
 

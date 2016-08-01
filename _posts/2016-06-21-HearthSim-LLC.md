@@ -5,7 +5,7 @@ permalink: /blog/hearthsim-llc/
 ---
 
 As of today, HearthSim is officially a company. Born from its community, the
-founders are @amw2104, @Epix37, @beheh and [myself](https://github.com/jleclanche).
+founders are @amw2104, @azeier, @beheh and [myself](https://github.com/jleclanche).
 
 There is so much I want to talk about. The community will still be there,
 stronger than ever. The company will back our commercial work and allow us to
