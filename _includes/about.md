@@ -15,6 +15,7 @@ Our core projects:
 
 We also host:
 
+ * [HSTracker](https://github.com/HearthSim/HSTracker), the official macOS port of Hearthstone Deck Tracker.
  * [Arena Tracker](https://github.com/supertriodo/Arena-Tracker) is another deck tracker specially built for Arena.
  * [Hearthbreaker](https://github.com/danielyule/hearthbreaker), another Hearthstone simulator in Python.
  * [HearthShroud](https://github.com/thomaseding/hearthshroud), a Haskell-based Hearthstone engine.
