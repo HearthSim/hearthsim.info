@@ -42,7 +42,7 @@ With more data, we could normalize the winrates against class popularity. In thi
 only be misleading however.
 
 We are hoping to get much more accurate numbers for the next few brawls. If you'd like to participate,
-[Download the latest HDT beta](https://hsdecktracker.net/download-hsreplay/)!
+[Download the latest HDT beta]({{ site.vars.hdt_download }})!
 
 We want to thank every player who has been part of the HSReplay.net HDT beta test. The final release
 should be coming in the next few days!
