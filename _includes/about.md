@@ -6,21 +6,25 @@ Are you interested? Come join us on the `#hearthsim` IRC channel on the
 
 Our core projects:
 
- * [Fireplace](/fireplace/) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python.
  * [HSReplay]({{ site.baseurl }}/hsreplay/) is a replay specification, including reference implementations.
  * [Stove](/stove/) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
  * [Joust](/joust/) is a web-based Hearthstone client which supports HSReplay as well as real games through Stove.
  * [Hearthstone Deck Tracker](https://hsdecktracker.net) is a deck/replay tracker and collection manager for Hearthstone.
  * [HearthstoneJSON.com](https://hearthstonejson.com/) exports all the card data in Hearthstone to JSON to work with more easily than the raw files.
 
+Our simulators:
+
+ * [Fireplace](/fireplace/) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python.
+ * [Brimstone](/brimstone/) is a high performance C# simulator inspired by Fireplace.
+ * [Hearthbreaker](https://github.com/danielyule/hearthbreaker), another Hearthstone simulator in Python (no longer maintained)
+ * [HearthShroud](https://github.com/thomaseding/hearthshroud), a Haskell-based Hearthstone engine (no longer maintained)
+ * [Soot](https://github.com/mischanix/soot), an attempt at building a Clojure-based Hearthstone Card DSL and engine (no longer maintained)
+ * [Brazier](https://github.com/HearthSim/Brazier), a simulator written in Java with a JSON-based card format (no longer maintained)
+
 We also host:
 
  * [HSTracker](https://github.com/HearthSim/HSTracker), the official macOS port of Hearthstone Deck Tracker.
  * [Arena Tracker](https://github.com/supertriodo/Arena-Tracker) is another deck tracker specially built for Arena.
- * [Hearthbreaker](https://github.com/danielyule/hearthbreaker), another Hearthstone simulator in Python.
- * [HearthShroud](https://github.com/thomaseding/hearthshroud), a Haskell-based Hearthstone engine.
- * [Brazier](https://github.com/HearthSim/Brazier), a simulator written in Java with a JSON-based card format.
- * [Soot](https://github.com/mischanix/soot), an attempt at building a Clojure-based Hearthstone Card DSL and engine.
  * [UnityPack](https://github.com/hearthsim/python-unitypack), a Python library for parsing and deserializing .unity3d files.
 
 Our tools:
