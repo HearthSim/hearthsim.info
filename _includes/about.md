@@ -6,20 +6,13 @@ Are you interested? Come join us on the `#hearthsim` IRC channel on the
 
 Our core projects:
 
+ * [Fireplace, Brimstone, Hearthbreaker](/simulators/) and many more simulators are all products of the HearthSim community.
  * [HSReplay]({{ site.baseurl }}/hsreplay/) is a replay specification, including reference implementations.
- * [Stove](/stove/) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
  * [Joust](/joust/) is a web-based Hearthstone client which supports HSReplay as well as real games through Stove.
  * [Hearthstone Deck Tracker](https://hsdecktracker.net) is a deck/replay tracker and collection manager for Hearthstone.
+ * [HSReplay.net](https://hsreplay.net) is a website to track online replays, using Joust and supported by Hearthstone Deck Tracker.
  * [HearthstoneJSON.com](https://hearthstonejson.com/) exports all the card data in Hearthstone to JSON to work with more easily than the raw files.
-
-Our simulators:
-
- * [Fireplace](/fireplace/) is a Hearthstone simulator in Python, including a full-blown reimplementation of the engine and cards in Python.
- * [Brimstone](/brimstone/) is a high performance C# simulator inspired by Fireplace.
- * [Hearthbreaker](https://github.com/danielyule/hearthbreaker), another Hearthstone simulator in Python (no longer maintained)
- * [HearthShroud](https://github.com/thomaseding/hearthshroud), a Haskell-based Hearthstone engine (no longer maintained)
- * [Soot](https://github.com/mischanix/soot), an attempt at building a Clojure-based Hearthstone Card DSL and engine (no longer maintained)
- * [Brazier](https://github.com/HearthSim/Brazier), a simulator written in Java with a JSON-based card format (no longer maintained)
+ * [Stove](/stove/) is a Battle.net and Hearthstone server written in Go. It is still an early work in progress.
 
 We also host:
 
