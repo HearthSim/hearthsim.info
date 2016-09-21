@@ -7,7 +7,7 @@ vars:
   description: "Hearthstone Simulation & AI"
   logo: "/images/logo.png"
   email: "contact@hearthsim.info"
-  hdt_download: "https://hsdecktracker.net/download-hsreplay/"
+  hdt_download: "https://hsdecktracker.net/download/"
   google_analytics:
   rss: true
 
