@@ -11,7 +11,7 @@ There is so much I want to talk about. The community will still be there,
 stronger than ever. The company will back our commercial work and allow us to
 finance some of our projects.
 
-Our current core project is [https://hsreplay.net/](HSReplay.net). I've wanted
+Our current core project is [HSReplay.net](https://hsreplay.net/). I've wanted
 to talk about it for a long time now.
 Games played with [Hearthstone Deck Tracker](https://hsdecktracker.net/) can
 automatically be uploaded to the website. Our Hearthstone Replayer,
