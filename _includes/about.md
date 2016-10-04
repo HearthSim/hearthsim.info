@@ -2,7 +2,7 @@ We are a small community of developers passionate about [Hearthstone](http://pla
 We build simulators and other tools around and for the game.
 
 Are you interested? Come [join us](/join/) on the `#hearthsim` IRC channel on the
-[Freenode network]({{ vars.links.webchat }}), or join our mirrored room [on Gitter]({{ vars.links.gitter }}).
+[Freenode network]({{ site.vars.links.webchat }}), or join our mirrored room [on Gitter]({{ site.vars.links.gitter }}).
 
 Our core projects:
 
@@ -33,4 +33,4 @@ Resources we work on:
  * The [Hearthstone Gamepedia Wiki](http://hearthstone.gamepedia.com/) is maintained by HearthSim members and includes work such as the [Advanced Rulebook](http://hearthstone.gamepedia.com/Advanced_rulebook)
 
 Everything happens [in the #hearthsim IRC channel](/join/).
-Logs are available [on Gitter]({{ vars.links.gitter }}).
+Logs are available [on Gitter]({{ site.vars.links.gitter }}).
