@@ -2,6 +2,7 @@
 layout: post
 title: New Selectors in Fireplace
 permalink: /blog/new-selectors-in-fireplace/
+author: JimboHS
 ---
 
 Over the last couple of weeks, at Jerome's suggestion, I rewrote all the
