@@ -14,6 +14,9 @@ For development and a reference implementations in Python, see the Github reposi
 
 <https://github.com/HearthSim/hsreplay>
 
+The main user of the HSReplay spec is [HSReplay.net](https://hsreplay.net),
+which uses [Joust](/joust) to make replays available on the web.
+
 
 ## Example replay
 
