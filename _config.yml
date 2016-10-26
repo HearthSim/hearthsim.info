@@ -14,7 +14,8 @@ vars:
   links:
     github: HearthSim
     youtube: c/HearthstoneScience
-    twitter:
+    discord: "https://discord.gg/jDSGFhT"
+    twitter: "@HSReplayNet"
     gitter: "https://gitter.im/HearthSim/HearthSim"
     webchat: "https://webchat.freenode.net/?channels=hearthsim,hearthsim-ai,hsreplay"
 
