@@ -48,7 +48,7 @@ We hope that you enjoy the visualization, and let us know if you’d like to see
 tweeting at [@HSReplayNet](https://twitter.com/{{ site.vars.links.twitter }}).
 
 
-[ pretty viz ]
+{% include metagame-viz.html %}
 
 
 Andrew

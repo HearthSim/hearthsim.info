@@ -1,0 +1,728 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.8/d3.min.js" charset="utf-8"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v0.3.js"></script>
+<script src="{{ site.baseurl }}/static/scripts/decklist.js"></script>
+
+<style type="text/css">
+/* @font-face {
+	font-family: Belwe;
+	src: url("/fonts/belwe.ttf"), url("/fonts/belwe.woff"), url("/fonts/belwe.eot");
+} */
+
+html:not(.paused) .back, html:not(.paused) .forward {
+	opacity: 0.1;
+	pointer-events: none;
+}
+
+html.new .play_pause {
+	box-shadow: yellow 0 0 10px;
+}
+
+svg {
+	display: inline-block;
+}
+
+.day0 .back {
+	opacity: 0.1;
+	pointer-events: none;
+}
+
+.day14 .forward, .day14 .play_pause {
+	opacity: 0.1;
+	pointer-events: none;
+}
+
+.controls {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	width: 600px;
+
+}
+
+.button {
+	background: #777;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 16px;
+	display: inline-block;
+	border-radius: 6px;
+	box-shadow: #111 2px 2px 3px;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+
+	margin: 5px;
+	cursor: pointer;
+}
+
+.button:hover {
+	box-shadow: #222 2px 2px 5px;
+}
+
+.button:active {
+	box-shadow: #000 1px 1px 1px;
+}
+
+.deckinfo {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 10px;
+	left: 625px;
+	width: 215px;
+	border-radius: 6px;
+	box-shadow: #111 2px 2px 3px;
+	border: 2px solid #444;
+	color: #EEE;
+	/*background: pink;*/
+}
+
+.deckinfo .title {
+	padding: 10px;
+	padding-bottom: 0px;
+}
+
+.deckinfo .title.archetype {
+	padding-bottom: 10px;
+}
+
+.deckinfo.open {
+}
+
+.progress_bar {
+	border: 3px solid #444;
+	width: 600px;
+	margin: 5px;
+	margin-left: 0;
+	position: relative;
+}
+
+.prog {
+	height: 100%;
+	background: #444;
+	width: 0;
+	transition: all 3.5s;
+	position: absolute;
+	z-index: -1;
+}
+
+.title.main {
+	width: 600px;
+	text-align: center;
+	font-style: 1.25rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #DDD;
+}
+
+.card {
+	font-family: sans-serif;
+	font-size: 14px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-size: cover;
+	position: relative;
+	display: inline-block;
+	border: 1px solid #444;
+	margin-bottom: 1px;
+	z-index: -1;
+
+	color: #EEE;
+	text-shadow: 0 0 5px #000;
+}
+
+.card::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	z-index: -1;
+	background: linear-gradient(to left, transparent 0%, transparent 40%, rgba(51, 51, 51, 0.95) 75%, #333 100%) ;
+}
+
+.card .count {
+	font-family: sans-serif;
+	/*border: 1px solid #111;*/
+	margin: 5px;
+	margin-left: 10px;
+	margin-right: 15px;
+}
+
+.deck-archetype {
+	text-transform: capitalize;
+	font-family: sans-serif;
+}
+
+.title, .deck-id {
+	font-family: sans-serif;
+	font-size: 0.9rem;
+}
+
+.deckContents {
+	padding-top: 10px;
+}
+
+image.mark {
+	pointer-events: none;
+}
+</style>
+
+<div class="metagame-viz">
+	<div class="controls">
+		<div class="back button">Back 1 Day</div>
+		<div class="play_pause button">Pause</div>
+		<div class="toggleview button">Chart by class</div>
+		<div class="forward button">Forward 1 Day</div>
+	</div>
+	<div class="progress_bar">
+		<div class="prog"></div>
+
+		<div class="main title">
+			The Metagame as of <span class="date"></span>
+		</div>
+	</div>
+	<div>
+		<svg id="chart" width="600" height="450"></svg>
+
+		<div class="deckinfo">
+			<div class="title">Deck: #<span class="deck-id"></span></div>
+			<div class="title">Archetype: <span class="deck-archetype"></span></div>
+			<div class="title">Number of Matches: <span class="deck-matches"></span></div>
+			<div class="title">Win Rate: <span class="deck-winrate"></span></div>
+			<div class="deckContents"></div>
+		</div>
+
+		<!-- <div class="togglearchetype">Chart by archetype</div> -->
+	</div>
+
+	<div id="legend" style="width:500px;margin-left:50px;margin-top: 15px;">
+
+	</div>
+	<script>
+	CSV_FILE = "https://gist.githubusercontent.com/jleclanche/089adae3c9e1a709f2a869164c08788d/raw/13d86e77707d3769906a7dc4e7ad795cc1e0fc7d/top_decks_over_time_data.csv"
+	window.paused = true;
+
+	const dayScale = d3.scaleLinear()
+		.domain([new Date("10/11/2016"), new Date("10/25/2016")])
+		.range([0, 595])
+
+	window.day = 0;
+
+	function togglePause () {
+		window.paused = !window.paused;
+		d3.select("html")
+			.classed("new", false);
+
+		d3.select("html")
+			.classed("paused", window.paused);
+
+		if (window.paused) {
+			d3.select(this).text("Play")
+		} else {
+			d3.select(this).text("Pause")
+		}
+	}
+
+	d3.select(".play_pause").on("click", togglePause)
+
+
+	var class_enum = [
+		{name: "DRUID", color: "#ff7d0a"},
+		{name: "HUNTER", color: "#abd473"},
+		{name: "MAGE", color: "#69ccf0"},
+		{name: "PALADIN", color: "#f58cba"},
+		{name: "PRIEST", color: "#fff"},
+		{name: "ROGUE", color: "#fff569"},
+		{name: "SHAMAN", color: "#0070de"},
+		{name: "WARLOCK", color: "#9482c9"},
+		{name: "WARRIOR", color: "#c79c6e"}
+	]
+
+
+	d3.csv(CSV_FILE, function(raw){
+		var days = d3.nest()
+			.key(function (d) { return d.day })
+			.rollup(function (d) {
+				return d;
+			})
+			.entries(raw);
+
+		render(days, raw);
+
+		d3.select(".prog")
+			.style("width", dayScale(new Date("10/" + (window.day + 11) + "/2016"))+"px")
+
+		var cancel = setInterval(function () {
+			if (window.paused) {
+				return;
+			}
+
+			window.day += 1;
+
+			d3.select(".prog")
+				.style("width", dayScale(new Date("10/" + (window.day + 11) + "/2016"))+"px")
+
+			if (window.day < 14) {
+				render(days, raw);
+			} else {
+				render(days, raw);
+				// clearInterval(cancel);
+				togglePause();
+				window.day = 14;
+			}
+		}, 3500)
+
+
+		d3.select(".back").on("click", function () {
+			if (window.day < 1) {
+				return;
+			}
+
+			window.day -= 1;
+
+			d3.select(".prog")
+				.style("width", dayScale(new Date("10/" + (window.day + 11) + "/2016"))+"px")
+
+			render(days, raw);
+		})
+
+		d3.select(".forward").on("click", function () {
+			if (window.day > 13) {
+				return;
+			}
+
+			window.day += 1;
+
+			d3.select(".prog")
+				.style("width", dayScale(new Date("10/" + (window.day + 11) + "/2016"))+"px")
+
+			render(days, raw);
+		})
+
+		d3.select(".toggleview").on("click", function () {
+			d3.select(".deckinfo")
+				.classed("open", false)
+				.transition()
+				.duration(350)
+				.style("height", "0px")
+
+			window.selectedDeck = undefined;
+
+			if (window.viewByClass) {
+				d3.select(this).text("Chart by class")
+			} else {
+				d3.select(this).text("Chart by deck")
+			}
+			window.viewByClass = !window.viewByClass;
+			render(days, raw)
+		})
+	})
+
+		d3.select(".togglearchetype").on("click", function () {
+			window.archetype = !window.archetype;
+
+			if (window.archetype) {
+				d3.select(this).text("Chart by specific deck")
+			} else {
+				d3.select(this).text("Chart by archetype")
+			}
+
+			render(days, raw)
+	})
+
+	function render(days, raw){
+		if (window.paused) {
+			d3.select(".play_pause").text("Play")
+		} else {
+			d3.select(".play_pause").text("Pause")
+		}
+
+		d3.select("body")
+			.attr("class", "day" + window.day);
+
+		d3.select(".date")
+			.text(function () {
+				return "10/" + (window.day + 11) + "/2016";
+			})
+
+		var selectedDeck = days[window.day].value.filter(function (d) {
+			return d.deck_id === window.selectedDeck;
+		})[0]
+
+		if (selectedDeck) {
+			d3.select(".deck-matches")
+			.text(selectedDeck.match_count);
+
+			d3.select(".deck-winrate")
+			.text(selectedDeck.win_rate + "%");
+		}
+
+
+		data = days[window.day].value
+
+
+		var summary = d3.nest()
+			 .key(function(d) { return d.player_class;})
+			 .rollup(function(d) {
+
+				return {match_count: d3.sum(d, function(g) {return g.match_count; }), win_rate: (d3.sum(d, function(g) {return (+g.win_rate) * (+g.match_count); }) / d3.sum(d, function(g) {return +g.match_count}))};
+			}).entries(data).map(function (d) {
+				d.match_count = d.value.match_count;
+				d.win_rate = d.value.win_rate;
+				d.player_class = d.key;
+
+				delete d["key"];
+				delete d["value"];
+
+				return d;
+			});
+
+		var summaryRaw = d3.nest()
+			 .key(function(d) { return d.day;})
+			 .key(function(d) { return d.player_class;})
+			 .rollup(function(d) {
+
+				 return {match_count: d3.sum(d, function(g) {return g.match_count; }), win_rate: (d3.sum(d, function(g) {return (+g.win_rate) * (+g.match_count); }) / d3.sum(d, function(g) {return +g.match_count}))};
+
+			}).entries(raw).map(function (d) {
+				d.match_count_max = d3.max(d.values, function (d) { return +d.value.match_count });
+				d.match_count_min = d3.min(d.values, function (d) { return +d.value.match_count });
+				d.win_rate_max = d3.max(d.values, function (d) { return +d.value.win_rate });
+				d.win_rate_min = d3.min(d.values, function (d) { return +d.value.win_rate });
+
+				return d;
+			});
+
+		var byArchetype = d3.nest()
+			 .key(function(d) { return d.archetype;})
+			 .rollup(function(d) {
+
+				return {player_class: d[0].player_class, match_count: d3.sum(d, function(g) {return g.match_count; }), win_rate: (d3.sum(d, function(g) {return (+g.win_rate) * (+g.match_count); }) / d3.sum(d, function(g) {return +g.match_count}))};
+			}).entries(data).map(function (d) {
+				d.match_count = d.value.match_count;
+				d.win_rate = d.value.win_rate;
+				d.player_class = d.value.player_class;
+				d.deck_id = d.key;
+
+				delete d["key"];
+				delete d["value"];
+
+				return d;
+			});
+
+			if (window.archetype) {
+				data = byArchetype;
+			}
+
+		var x = d3.scaleLog().domain(d3.extent(raw, function(d) { return +d.match_count })).range([64, 536])
+		var y = d3.scaleLinear().domain([d3.max(raw, function(d) { return +d.win_rate }), d3.min(raw, function(d) { return +d.win_rate })]).range([64, 386])
+		// var x2 = x
+		// var y2 = y
+		var x2 = d3.scaleLog().domain([d3.min(summaryRaw, function(d) { return +d.match_count_min }), d3.max(summaryRaw, function(d) { return +d.match_count_max })]).range([64, 536])
+		var y2 = d3.scaleLinear().domain([d3.max(summaryRaw, function(d) { return +d.win_rate_max }), d3.min(summaryRaw, function(d) { return +d.win_rate_min })]).range([64, 386])
+
+		window.useY = y;
+		window.useX = x;
+
+		if (window.viewByClass) {
+			window.useY = y2;
+			window.useX = x2;
+		}
+
+		var halfOfDecks = d3.select("#chart")
+			.selectAll("line.halfOfDecks")
+			.data([{value: 0.5}])
+
+		halfOfDecks
+			.enter()
+			.append("line")
+			.classed("halfOfDecks", true)
+			.attr("x1", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+			.attr("y1", 0)
+			.attr("x2", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+			.attr("y2", 450)
+			.style("stroke-width", 2)
+			.style("stroke", "#444")
+
+		d3.select("#chart")
+			.selectAll("line.halfOfDecks")
+			.data([{value: 0.5}])
+			.transition()
+			.duration(1000)
+			.attr("x1", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+			.attr("y1", 0)
+			.attr("x2", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+			.attr("y2", 450)
+
+
+		var fiveHundred = d3.select("#chart")
+			.selectAll("line.fiveHundred")
+			.data([{value: 0.5}])
+
+		fiveHundred
+			.enter()
+			.append("line")
+			.classed("fiveHundred", true)
+			.attr("x1", 0)
+			.attr("y1", useY(50))
+			.attr("x2", 600)
+			.attr("y2", useY(50))
+			.style("stroke-width", 2)
+			.style("stroke", "#444")
+
+		d3.select("#chart")
+			.selectAll("line.fiveHundred")
+			.data([{value: 0.5}])
+			.transition()
+			.duration(1000)
+			.attr("x1", 0)
+			.attr("y1", useY(50))
+			.attr("x2", 600)
+			.attr("y2", useY(50))
+			.style("stroke-width", 2)
+			.style("stroke", "#444")
+
+		d3.select("#chart")
+			.style("border", "3px solid #444")
+			.selectAll("circle.mark")
+			.data(data, function (d) { return d.deck_id; }).exit()
+			.transition()
+			.delay(0)
+			.duration(500)
+			.ease(d3.easeCubicInOut)
+			.attr("r", 0)
+			.remove()
+
+
+		var deckMarks = d3.select("#chart")
+			.style("border", "3px solid #444")
+			.selectAll("circle.mark")
+			.data(data, function (d) { return d.deck_id; })
+			.enter()
+			.append("circle")
+			.classed("mark", true)
+			.attr("r", 0)
+			.style("stroke-width", function (d) {
+				return d.deck_id === window.selectedDeck? 1 : 0
+			})
+			.style("stroke", "#DDD")
+
+		deckMarks
+			.transition()
+			.duration(500)
+			.attr("r", function (d) {
+				if (window.selectedDeck === d.deck_id) {
+					return 5
+				} else {
+					return 3
+				}
+			})
+
+		deckMarks
+		.style("fill", function (d) { return class_enum[(+d.player_class) - 2].color })
+		.style("cursor", "pointer")
+		.attr("data-class", function (d) { return d.player_class })
+		.attr("cx", function(d) { return x(d.match_count) })
+		.attr("cy", function(d) { return y(d.win_rate) })
+		.on("mouseover", function (d, i) {
+			d3.select(this).transition().duration(250).attr("r", 8)
+		})
+		.on("mouseout", function (d, i) {
+			d3.select(this).transition().duration(250).attr("r", function (d) {
+				if (window.selectedDeck === d.deck_id) {
+					return 5
+				} else {
+					return 3
+				}
+			})
+		})
+		.on("click", function (d, i) {
+			window.selectedDeck = d.deck_id;
+
+
+		d3.select("#chart")
+			.selectAll("circle.mark")
+			.data(data, function (d) { return d.deck_id; })
+			.transition()
+			.duration(500)
+			.attr("r", function (d) {
+				if (window.selectedDeck === d.deck_id) {
+					return 5
+				} else {
+					return 3
+				}
+			})
+
+			var newHeight = 0;
+
+			d3.select(".deckinfo")
+				.classed("open", false)
+				.transition()
+				.duration(350)
+				.style("height", "0px")
+				.on("end", function() {
+					makeDeckList(getDecklist(d))
+				})
+				.transition()
+				.delay(150)
+				.duration(500)
+				.ease(d3.easeBounce)
+				.style("height", function () {
+					return getDecklist(d).formattedData.length * 25 + 125 + "px";
+				})
+				.on("end", function () {
+					d3.select(this).classed("open", true)
+				})
+		})
+
+		if (window.viewByClass) {
+			d3.select("#chart")
+			.selectAll("circle.mark")
+			.data(data, function (d) { return d.deck_id; })
+			.transition()
+			.delay(0)
+			.duration(1500)
+			.ease(d3.easeCubicInOut)
+			.attr("r", 0)
+			.attr("cx", function(d) { return x2(summary.find(function (x) {return x.player_class === d.player_class}).match_count) })
+			.attr("cy", function(d) { return y2(summary.find(function (x) {return x.player_class === d.player_class}).win_rate) })
+		} else {
+			d3.select("#chart")
+			.selectAll("circle.mark")
+			.data(data, function (d) { return d.deck_id; })
+			.transition()
+			.delay(0)
+			.duration(1500)
+			.ease(d3.easeCubicInOut)
+			.attr("r", function (d) {
+				if (window.selectedDeck === d.deck_id) {
+					return 5
+				} else {
+					return 3
+				}
+			})
+			.attr("cx", function(d) { return x(d.match_count) })
+			.attr("cy", function(d) { return y(d.win_rate) })
+		}
+
+		var classMarks = d3.select("#chart")
+		.style("border", "3px solid #444")
+		.selectAll("image.mark")
+		.data(summary, function (d) { return d.player_class })
+		.enter()
+		.append("image")
+		.style("opacity", 0)
+		.classed("mark", true)
+		.attr("xlink:href", function (d) {
+			var i = (+d.player_class) - 2;
+
+			var name = class_enum[i].name.toLowerCase();
+
+			return "/images/class-icons/" + name + ".png"
+		})
+		.attr("x", function(d) { return x2(d.match_count) - 16 })
+		.attr("y", function(d) { return y2(d.win_rate) - 16 })
+		.attr("height", "32px")
+		.attr("width", "32px")
+		.style("cursor", "pointer")
+		.attr("data-class", function (d) { return d.player_class })
+		// .on("mouseover", function (d, i) {
+		//	 d3.select(this).transition().duration(250).attr("width", "64px").attr("height", "64px").attr("x", x2(d.match_count) - 32).attr("y", y2(d.win_rate) - 32)
+		//
+		// })
+		// .on("mouseout", function (d, i) {
+		//	 d3.select(this).transition().duration(250).attr("width", "32px").attr("height", "32px").attr("x", x2(d.match_count) - 16).attr("y", y2(d.win_rate) - 16)
+		// })
+
+	var classMarks = d3.select("#chart")
+		.selectAll("image.mark")
+		.data(summary, function (d) { return d.player_class })
+		.transition()
+		.delay(window.viewByClass? 1000 : 500)
+		.duration(1500)
+		.attr("x", function(d) { return x2(d.match_count) - 16 })
+		.attr("y", function(d) { return y2(d.win_rate) - 16 })
+
+	var classMarks = d3.select("#chart")
+		.selectAll("image.mark")
+		.data(summary, function (d) { return d.player_class })
+		.transition()
+		.delay(window.viewByClass? 1000 : 0)
+		.duration(500)
+		.attr("x", function(d) { return x2(d.match_count) - 16 })
+		.attr("y", function(d) { return y2(d.win_rate) - 16 })
+		.style("opacity", function() {
+			if (window.viewByClass) {
+				return 1
+			} else {
+				return 0
+			}
+		})
+
+
+		var newLegends = d3.select("#legend")
+			.style("display", "flex")
+			.style("flex-wrap", "wrap")
+			.style("justify-content", "space-between")
+			.selectAll(".item")
+			.data(class_enum)
+			.enter()
+			.append("div")
+			.classed("item", true)
+			.style("box-shadow", "#111 1px 1px 5px")
+			.style("padding", "10px")
+			.style("margin", "15px")
+			.style("flex", "1")
+			.style("display", "inline-flex")
+			.style("align-items", "center")
+			.style("height", "32px")
+			.style("border-radius", "6px")
+			// .style("width", "100px")
+			.style("text-align", "right")
+			.style("background", function (d, i) { return class_enum[i].color })
+			.on("mouseover", function (d, i) {
+				d3.selectAll((window.viewByClass? "image": "circle") + ".mark")
+					.transition()
+					.duration(250)
+					.style("opacity", 0.1)
+
+				d3.selectAll((window.viewByClass? "image": "circle") + '.mark[data-class="'+ (i + 2) +'"]')
+					.transition()
+					.duration(250)
+					.style("opacity", 1)
+
+			})
+			.on("mouseout", function (d) {
+				d3.selectAll((window.viewByClass? "image": "circle") + ".mark")
+					.transition()
+					.duration(250)
+					.style("opacity", 1)
+			})
+
+		newLegends
+			.append("img")
+			.style("border-radius", "50%")
+			.style("box-shadow", "#111 1px 1px 3px")
+			.style("margin-left", "-32px")
+			.style("margin-right", "5px")
+			.attr("src", function (d,i) {
+				var name = class_enum[i].name.toLowerCase();
+
+				return "/images/class-icons/" + name + ".png"
+			})
+
+		newLegends
+			.append("div")
+			.style("width", "100%")
+			.style("text-transform", "capitalize")
+			.style("text-align", "center")
+			.text(function(d, i) { return class_enum[i].name.toLowerCase() })
+	}
+	</script>
+</div>
