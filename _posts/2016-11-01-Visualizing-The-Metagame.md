@@ -19,7 +19,7 @@ the metagame on ranked ladder changes over time.
 HSReplay.net gets several hundred thousand replays uploaded to it every day.
 Since we have that much data, we decided to identify the highest win rate decks
 for each day during the period from October 11th through October 25th, plot them by % win
-rate on the Y-Axis and % popularity on the X-Axis, and then animate how each deck
+rate on the Y-Axis and popularity (number of matches played) on the X-Axis, and then animate how each deck
 changes over time.
 
 We specifically looked at the standard ranked ladder from rank 15 through Legend and only
@@ -34,7 +34,7 @@ They split the grid clockwise into four quadrants:
 * **Staple Decks (Quadrant II)** - These are the high performing popular decks that
 everyone is used to encountering on the ladder.
 * **Lemming Decks (Quadrant II)** - These are decks that are popular but lose more often
-then they win. If you're playing one of these, you're a lemming.
+then they win. If you're playing one of these, you're not going to do very well unless you are a substantially above average player.
 * **Garbage Decks (Quadrant IV)** - These decks don't perform well and are not commonly played.
 
 
@@ -47,6 +47,8 @@ Finally, we also added an option to see the same data but visualized by class.
 We hope that you enjoy the visualization, and let us know if you’d like to see more like this by
 tweeting at [@HSReplayNet](https://twitter.com/{{ site.vars.links.twitter }}).
 
+To see the how the meta has changed over time simply click the play button below.
+You can also click on individual dots below to see the decklist and stats for that deck.
 
 {% include metagame-viz.html %}
 
