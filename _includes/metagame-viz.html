@@ -3,174 +3,199 @@
 <script src="{{ site.baseurl }}/static/scripts/decklist.js"></script>
 
 <style type="text/css">
-/* @font-face {
-	font-family: Belwe;
-	src: url("/fonts/belwe.ttf"), url("/fonts/belwe.woff"), url("/fonts/belwe.eot");
-} */
+      html, body, * {
+        font-family: Belwe, sans-serif;
+        box-sizing: border-box;
+      }
 
-html:not(.paused) .back, html:not(.paused) .forward {
-	opacity: 0.1;
-	pointer-events: none;
-}
+			.metagame-viz {
+				position: relative;
+			}
 
-html.new .play_pause {
-	box-shadow: yellow 0 0 10px;
-}
+      body {
+        padding: 25px;
+      }
 
-svg {
-	display: inline-block;
-}
+      text {
+        font-family: sans-serif;
+      }
 
-.day0 .back {
-	opacity: 0.1;
-	pointer-events: none;
-}
+      html:not(.played) .play_pause {
+        box-shadow: yellow 0 0 10px;
+      }
 
-.day14 .forward, .day14 .play_pause {
-	opacity: 0.1;
-	pointer-events: none;
-}
+      svg {
+        display: inline-block;
+        overflow: visible;
+				background: #333;
+      }
 
-.controls {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	width: 600px;
+			.progress_bar {
+				background: #333;
+			}
 
-}
+			.deckinfo {
+				background: #333;
+			}
 
-.button {
-	background: #777;
-	padding: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	font-size: 16px;
-	display: inline-block;
-	border-radius: 6px;
-	box-shadow: #111 2px 2px 3px;
-	-webkit-transition: all 0.5s;
-	-o-transition: all 0.5s;
-	transition: all 0.5s;
+      html:not(.paused) .back, html:not(.paused) .forward {
+        opacity: 0.1;
+        pointer-events: none;
+      }
 
-	margin: 5px;
-	cursor: pointer;
-}
+      .day0 .back {
+        opacity: 0.1;
+        pointer-events: none;
+      }
 
-.button:hover {
-	box-shadow: #222 2px 2px 5px;
-}
+      .day14 .forward, .day14 .play_pause {
+        opacity: 0.1;
+        pointer-events: none;
+      }
 
-.button:active {
-	box-shadow: #000 1px 1px 1px;
-}
+      .controls {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
 
-.deckinfo {
-	height: 0;
-	overflow: hidden;
-	position: absolute;
-	top: 10px;
-	left: 625px;
-	width: 215px;
-	border-radius: 6px;
-	box-shadow: #111 2px 2px 3px;
-	border: 2px solid #444;
-	color: #EEE;
-	/*background: pink;*/
-}
+        width: 600px;
 
-.deckinfo .title {
-	padding: 10px;
-	padding-bottom: 0px;
-}
+        justify-content: space-between;
+      }
 
-.deckinfo .title.archetype {
-	padding-bottom: 10px;
-}
+      .button {
+        background: #777;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 16px;
+        display: inline-block;
+        border-radius: 6px;
+        box-shadow: #111 2px 2px 3px;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
 
-.deckinfo.open {
-}
+        margin: 5px;
+        cursor: pointer;
+      }
 
-.progress_bar {
-	border: 3px solid #444;
-	width: 600px;
-	margin: 5px;
-	margin-left: 0;
-	position: relative;
-}
+      .button:hover {
+        box-shadow: #222 2px 2px 5px;
+      }
 
-.prog {
-	height: 100%;
-	background: #444;
-	width: 0;
-	transition: all 3.5s;
-	position: absolute;
-	z-index: -1;
-}
+      .button:active {
+        box-shadow: #000 1px 1px 1px;
+      }
 
-.title.main {
-	width: 600px;
-	text-align: center;
-	font-style: 1.25rem;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: #DDD;
-}
+      .deckinfo {
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 10px;
+        left: 625px;
+        width: 215px;
+        border-radius: 6px;
+        box-shadow: #111 2px 2px 3px;
+        border: 2px solid #444;
+        color: #EEE;
+				z-index: 0;
+        /*background: pink;*/
+      }
 
-.card {
-	font-family: sans-serif;
-	font-size: 14px;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	background-size: cover;
-	position: relative;
-	display: inline-block;
-	border: 1px solid #444;
-	margin-bottom: 1px;
-	z-index: -1;
+      .deckinfo .title {
+        padding: 10px;
+        padding-bottom: 0px;
+      }
 
-	color: #EEE;
-	text-shadow: 0 0 5px #000;
-}
+      .deckinfo .title.archetype {
+        padding-bottom: 10px;
+      }
 
-.card::before {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	z-index: -1;
-	background: linear-gradient(to left, transparent 0%, transparent 40%, rgba(51, 51, 51, 0.95) 75%, #333 100%) ;
-}
+      .deckinfo.open {
+      }
 
-.card .count {
-	font-family: sans-serif;
-	/*border: 1px solid #111;*/
-	margin: 5px;
-	margin-left: 10px;
-	margin-right: 15px;
-}
+      .progress_bar {
+        border: 3px solid #444;
+        width: 600px;
+        margin: 5px;
+        margin-left: 0;
+        position: relative;
+      }
 
-.deck-archetype {
-	text-transform: capitalize;
-	font-family: sans-serif;
-}
+      .prog {
+        height: 100%;
+        background: #444;
+        width: 0;
+        transition: all 3.5s;
+        position: absolute;
+      }
 
-.title, .deck-id {
-	font-family: sans-serif;
-	font-size: 0.9rem;
-}
+      .title.main {
+        width: 600px;
+        text-align: center;
+        font-style: 1.25rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #DDD;
+				position: relative;
+      }
 
-.deckContents {
-	padding-top: 10px;
-}
+      .card {
+        font-family: sans-serif;
+        font-size: 14px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        background-size: cover;
+        position: relative;
+        display: inline-block;
+        border: 1px solid #444;
+        margin-bottom: 1px;
+        z-index: -1;
 
-image.mark {
-	pointer-events: none;
-}
+        color: #EEE;
+        text-shadow: 0 0 5px #000;
+      }
+
+      .card::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        z-index: -1;
+        background: linear-gradient(to left, transparent 0%, transparent 40%, rgba(51, 51, 51, 0.95) 75%, #333 100%) ;
+      }
+
+      .card .count {
+        font-family: sans-serif;
+        /*border: 1px solid #111;*/
+        margin: 5px;
+        margin-left: 10px;
+        margin-right: 15px;
+      }
+
+      .deck-archetype {
+        text-transform: capitalize;
+        font-family: sans-serif;
+      }
+
+      .title, .deck-id {
+        font-family: sans-serif;
+        font-size: 0.9rem;
+      }
+
+      .deckContents {
+        padding-top: 10px;
+				z-index: 1;
+      }
+
+      image.mark {
+        pointer-events: none;
+      }
 </style>
 
 <div class="metagame-viz">
@@ -184,19 +209,17 @@ image.mark {
 		<div class="prog"></div>
 
 		<div class="main title">
-			The Metagame as of <span class="date"></span>
+			The Metagame as of <span class="titledate"></span>
 		</div>
 	</div>
-	<div>
-		<svg id="chart" width="600" height="450"></svg>
-
-		<div class="deckinfo">
-			<div class="title">Deck: #<span class="deck-id"></span></div>
-			<div class="title">Archetype: <span class="deck-archetype"></span></div>
-			<div class="title">Number of Matches: <span class="deck-matches"></span></div>
-			<div class="title">Win Rate: <span class="deck-winrate"></span></div>
-			<div class="deckContents"></div>
-		</div>
+	<div style="position: relative;">
+		<svg id="chart" width="600" height="450">
+      <text x="0" y="460" font-family="sans-serif" font-size="12px" fill="#333" class="x0">0</text>
+      <text x="592" y="460" font-family="sans-serif" font-size="12px" fill="#333" text-anchor="end" class="x1">100</text>
+      <text x="592" y="460" font-family="sans-serif" font-size="12px" fill="#999" text-anchor="end" class="fifty">50% Win Rate</text>
+      <text x="-5" y="442" font-family="sans-serif" font-size="12px" fill="#333" text-anchor="end" class="y0">0</text>
+      <text x="-5" y="10" font-family="sans-serif" font-size="12px" fill="#333" text-anchor="end" class="y1">100</text>
+		</svg>
 
 		<!-- <div class="togglearchetype">Chart by archetype</div> -->
 	</div>
@@ -204,6 +227,15 @@ image.mark {
 	<div id="legend" style="width:500px;margin-left:50px;margin-top: 15px;">
 
 	</div>
+
+	<div class="deckinfo">
+		<div class="title">Deck: #<span class="deck-id"></span></div>
+		<div class="title">Archetype: <span class="deck-archetype"></span></div>
+		<div class="title">Number of Matches: <span class="deck-matches"></span></div>
+		<div class="title">Win Rate: <span class="deck-winrate"></span></div>
+		<div class="deckContents"></div>
+	</div>
+
 	<script>
 	CSV_FILE = "https://gist.githubusercontent.com/jleclanche/089adae3c9e1a709f2a869164c08788d/raw/13d86e77707d3769906a7dc4e7ad795cc1e0fc7d/top_decks_over_time_data.csv"
 	window.paused = true;
@@ -217,7 +249,7 @@ image.mark {
 	function togglePause () {
 		window.paused = !window.paused;
 		d3.select("html")
-			.classed("new", false);
+			.classed("played", true);
 
 		d3.select("html")
 			.classed("paused", window.paused);
@@ -346,7 +378,7 @@ image.mark {
 		d3.select("body")
 			.attr("class", "day" + window.day);
 
-		d3.select(".date")
+		d3.select(".title .titledate")
 			.text(function () {
 				return "10/" + (window.day + 11) + "/2016";
 			})
@@ -416,77 +448,98 @@ image.mark {
 				return d;
 			});
 
-			if (window.archetype) {
-				data = byArchetype;
-			}
+      var x = d3.scaleLog().domain(d3.extent(raw, function(d) { return +d.match_count })).range([64, 536])
+      var y = d3.scaleLinear().domain([d3.max(raw, function(d) { return +d.win_rate }), d3.min(raw, function(d) { return +d.win_rate })]).range([64, 386]).nice()
+      // var x2 = x
+      // var y2 = y
+      var x2 = d3.scaleLog().domain([d3.min(summaryRaw, function(d) { return +d.match_count_min }), d3.max(summaryRaw, function(d) { return +d.match_count_max })]).range([64, 536])
+      var y2 = d3.scaleLinear().domain([d3.max(summaryRaw, function(d) { return +d.win_rate_max }), d3.min(summaryRaw, function(d) { return +d.win_rate_min })]).range([64, 386]).nice()
 
-		var x = d3.scaleLog().domain(d3.extent(raw, function(d) { return +d.match_count })).range([64, 536])
-		var y = d3.scaleLinear().domain([d3.max(raw, function(d) { return +d.win_rate }), d3.min(raw, function(d) { return +d.win_rate })]).range([64, 386])
-		// var x2 = x
-		// var y2 = y
-		var x2 = d3.scaleLog().domain([d3.min(summaryRaw, function(d) { return +d.match_count_min }), d3.max(summaryRaw, function(d) { return +d.match_count_max })]).range([64, 536])
-		var y2 = d3.scaleLinear().domain([d3.max(summaryRaw, function(d) { return +d.win_rate_max }), d3.min(summaryRaw, function(d) { return +d.win_rate_min })]).range([64, 386])
+      window.useY = y;
+      window.useX = x;
 
-		window.useY = y;
-		window.useX = x;
+      if (window.viewByClass) {
+        window.useY = y2;
+        window.useX = x2;
+      }
 
-		if (window.viewByClass) {
-			window.useY = y2;
-			window.useX = x2;
-		}
+      d3.select('.x0')
+        .text(function (d) {
+          return window.useX.domain()[0]
+        })
 
-		var halfOfDecks = d3.select("#chart")
-			.selectAll("line.halfOfDecks")
-			.data([{value: 0.5}])
+      d3.select('.x1')
+        .text(function (d) {
+          return window.useX.domain()[1]
+        })
 
-		halfOfDecks
-			.enter()
-			.append("line")
-			.classed("halfOfDecks", true)
-			.attr("x1", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
-			.attr("y1", 0)
-			.attr("x2", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
-			.attr("y2", 450)
-			.style("stroke-width", 2)
-			.style("stroke", "#444")
+      d3.select('.y0')
+        .text(function (d) {
+          return window.useY.domain()[1] + '%'
+        })
 
-		d3.select("#chart")
-			.selectAll("line.halfOfDecks")
-			.data([{value: 0.5}])
-			.transition()
-			.duration(1000)
-			.attr("x1", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
-			.attr("y1", 0)
-			.attr("x2", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
-			.attr("y2", 450)
+      d3.select('.y1')
+        .text(function (d) {
+          return window.useY.domain()[0] + '%'
+        })
+
+      d3.select('.fifty')
+        .attr('y', function () {
+          return useY(50) - 5;
+        })
+
+      var halfOfDecks = d3.select("#chart")
+        .selectAll('line.halfOfDecks')
+        .data([{value: 0.5}])
+
+      halfOfDecks
+        .enter()
+        .append('line')
+        .classed('halfOfDecks', true)
+        .attr("x1", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+        .attr("y1", 0)
+        .attr("x2", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+        .attr("y2", 445)
+        .style("stroke-width", 2)
+        .style("stroke", "#444")
+
+      d3.select("#chart")
+        .selectAll('line.halfOfDecks')
+        .data([{value: 0.5}])
+        .transition()
+        .duration(1000)
+        .attr("x1", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+        .attr("y1", 0)
+        .attr("x2", useX(d3.mean(window.viewByClass? summary : data, function (d) {return +d.match_count})))
+        .attr("y2", 445)
 
 
-		var fiveHundred = d3.select("#chart")
-			.selectAll("line.fiveHundred")
-			.data([{value: 0.5}])
+      var fiveHundred = d3.select("#chart")
+        .selectAll('line.fiveHundred')
+        .data([{value: 0.5}])
 
-		fiveHundred
-			.enter()
-			.append("line")
-			.classed("fiveHundred", true)
-			.attr("x1", 0)
-			.attr("y1", useY(50))
-			.attr("x2", 600)
-			.attr("y2", useY(50))
-			.style("stroke-width", 2)
-			.style("stroke", "#444")
+      fiveHundred
+        .enter()
+        .append('line')
+        .classed('fiveHundred', true)
+        .attr("x1", 0)
+        .attr("y1", useY(50))
+        .attr("x2", 595)
+        .attr("y2", useY(50))
+        .style("stroke-width", 2)
+        .style("stroke", "#444")
 
-		d3.select("#chart")
-			.selectAll("line.fiveHundred")
-			.data([{value: 0.5}])
-			.transition()
-			.duration(1000)
-			.attr("x1", 0)
-			.attr("y1", useY(50))
-			.attr("x2", 600)
-			.attr("y2", useY(50))
-			.style("stroke-width", 2)
-			.style("stroke", "#444")
+      d3.select("#chart")
+        .selectAll('line.fiveHundred')
+        .data([{value: 0.5}])
+        .transition()
+        .duration(1000)
+        .attr("x1", 0)
+        .attr("y1", useY(50))
+        .attr("x2", 595)
+        .attr("y2", useY(50))
+        .style("stroke-width", 2)
+        .style("stroke", "#444")
 
 		d3.select("#chart")
 			.style("border", "3px solid #444")
@@ -574,7 +627,7 @@ image.mark {
 				.duration(500)
 				.ease(d3.easeBounce)
 				.style("height", function () {
-					return getDecklist(d).formattedData.length * 25 + 125 + "px";
+					return getDecklist(d).formattedData.length * 29 + 140 + "px";
 				})
 				.on("end", function () {
 					d3.select(this).classed("open", true)
