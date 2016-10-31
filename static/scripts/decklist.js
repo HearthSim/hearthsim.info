@@ -36,9 +36,6 @@ function makeDeckList(deck) {
 
 	var archetype = deck.archetype.replace("_", " ").toLowerCase()
 
-	d3.select(".deck-id")
-		.text(deck.deckId);
-
 	d3.select(".deck-archetype")
 		.text(archetype);
 
