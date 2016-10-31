@@ -3,7 +3,7 @@ layout: post
 title: Visualizing The Metagame
 permalink: /blog/2016/visualizing-the-metagame/
 author: Andrew Wilson
-hidden: true
+hidden: false
 ---
 
 Ever since we first launched [HSReplay.net](https://hsreplay.net/), we’ve been really
