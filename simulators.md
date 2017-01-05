@@ -72,3 +72,17 @@ Brazier was a Java approach to simulation, using a JSON-based card format.
 This project is no longer maintained.
 
 * [Source code](https://github.com/HearthSim/Brazier)
+
+
+## Other simulators
+
+### HearthSim
+
+The HearthSim simulator is a Java imperative simulator and, ironically, not a
+HearthSim project. Oyachai, its original author, has kindly
+[allowed the HearthSim community to reuse the name](https://github.com/oyachai/HearthSim/issues/38),
+which is where it came from.
+
+This project is no longer maintained.
+
+* [Source code](https://github.com/oyachai/HearthSim)
