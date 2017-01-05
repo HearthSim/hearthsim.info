@@ -4,21 +4,22 @@ title: The HearthSim community
 permalink: /join/
 ---
 
-The HearthSim community's main hang out is the `#hearthsim` channel on Freenode.
-We are also in the `#hearthsim-ai` channel for AI discussions and the `#hsreplay`
-channel for the [HSReplay website](https://hsreplay.net/).
+## Chat
 
-You can use the [Freenode Webchat]({{ site.vars.links.webchat }})
-to join us and say hi. We recommend [IRCCloud](https://www.irccloud.com/)
-as a more permanent web client, or [Quassel](http://quassel-irc.org/) as a
-desktop IRC client. Logs are available [on Gitter]({{ site.vars.links.gitter }}).
+The HearthSim developer community's main hang out is on IRC/Discord.
+The channel is mirrored between the two, you can use either!
 
-The channel is also available [on Discord]({{ site.vars.links.discord }}).
+* IRC: #HearthSim on chat.freenode.net ([Webchat]({{ site.vars.links.webchat }}),
+  [Quassel desktop client](http://quassel-irc.org))
+* Discord: [Instant invite]({{ site.vars.links.discord.devs }})
+* Gitter (extra mirror; logs): [HearthSim/HearthSim]({{ site.vars.links.gitter }})
 
-We're also in the [/r/hearthsim](https://www.reddit.com/r/hearthsim) and
-[/r/hsreplay](https://www.reddit.com/r/hsreplay) subreddits.
+Subreddits:
+
+* [/r/HearthSim]({{ site.vars.links.reddit.hearthsim }})
+* [/r/HSReplay]({{ site.vars.links.reddit.hsreplay }})
 
 Discussions from the previous AI mailing list are still available in the
 [Google Groups archive](https://groups.google.com/forum/#!forum/hearthstone-simulator-dev).
 
-To contact us directly, you can also email us at <contact@hearthsim.info>.
+To contact us directly, you can also email us at <{{ site.vars.email }}>.

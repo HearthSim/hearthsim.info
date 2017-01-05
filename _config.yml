@@ -14,10 +14,15 @@ vars:
   links:
     github: HearthSim
     youtube: c/HearthstoneScience
-    discord: "https://discord.gg/jDSGFhT"
     twitter: "@HSReplayNet"
     gitter: "https://gitter.im/HearthSim/HearthSim"
-    webchat: "https://webchat.freenode.net/?channels=hearthsim,hearthsim-ai,hsreplay"
+    webchat: "https://webchat.freenode.net/?channels=hearthsim"
+    discord:
+      devs: "https://discord.gg/jDSGFhT"
+      users: "https://discord.gg/e4MbXqn"
+    reddit:
+      hearthsim: "https://reddit.com/r/hearthsim"
+      hsreplay: "https://reddit.com/r/hsreplay"
 
 
 # Syntax highlighting
