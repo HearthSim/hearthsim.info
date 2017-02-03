@@ -21,18 +21,6 @@ on the official client.
 * [Source code](https://github.com/jleclanche/fireplace)
 
 
-## Brimstone
-
-Brimstone is a high performance C# simulator inspired by Fireplace. It was
-created to iterate on Fireplace's design and overcome the performance constraints
-of Python.
-
-It also features a Kettle interface and is actively being developed.
-
-* [Main page](/brimstone/)
-* [Source code](https://github.com/HearthSim/Brimstone)
-
-
 ## Hearthbreaker
 
 Hearthbreaker is another simulator written in Python 3, with most cards implemented
