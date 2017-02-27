@@ -137,6 +137,10 @@ For docstrings, *always* use triple-double quotes.
 **No import block separation**. The ordering stays the same as in PEP8, but we
 do not separate each block by newlines as this far too often results in noise.
 
+**No naked except clause**. The `except:` statement catches everything, including
+exceptions such as `KeyboardInterrupt`. There is almost no situation in which
+this is desirable. Use `except Exception:` instead.
+
 
 ## Go
 
