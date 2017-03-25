@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About the HearthSim community
+title: About the HearthSim Developer Community
 permalink: /about/
 ---
 

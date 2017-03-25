@@ -6,7 +6,7 @@ Are you interested? Come [join us](/join/) on the `#hearthsim` IRC channel on th
 
 Our core projects:
 
- * [Fireplace, SabberStone, Hearthbreaker](/simulators/) and many more simulators are all products of the HearthSim community.
+ * [Fireplace, SabberStone, Hearthbreaker](/simulators/) and many more simulators are all products of the HearthSim Developer Community.
  * [HSReplay]({{ site.baseurl }}/hsreplay/) is a replay specification, including reference implementations.
  * [Joust](/joust/) is a web-based Hearthstone client which supports HSReplay as well as real games through Stove.
  * [Hearthstone Deck Tracker](https://hsdecktracker.net) is a deck/replay tracker and collection manager for Hearthstone.
