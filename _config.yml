@@ -24,7 +24,6 @@ vars:
       hearthsim: "https://reddit.com/r/hearthsim"
       hsreplay: "https://reddit.com/r/hsreplay"
 
-
 # Syntax highlighting
 markdown: kramdown
 kramdown:
@@ -39,14 +38,8 @@ kramdown:
 sass:
   style: :compressed
 
-
-# Plug-ins
-gems:
-  - jekyll-mentions # @-mentions
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-
-
 exclude:
+  - CNAME
   - LICENSE
   - README.md
-  - CNAME
+  - vendor/
