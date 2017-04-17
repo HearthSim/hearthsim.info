@@ -18,8 +18,8 @@ vars:
     gitter: "https://gitter.im/HearthSim/HearthSim"
     webchat: "https://webchat.freenode.net/?channels=hearthsim"
     discord:
-      devs: "https://discord.gg/jDSGFhT"
-      users: "https://discord.gg/e4MbXqn"
+      devs: "https://discord.gg/hearthsim-devs"
+      users: "https://discord.gg/hearthsim"
     reddit:
       hearthsim: "https://reddit.com/r/hearthsim"
       hsreplay: "https://reddit.com/r/hsreplay"
