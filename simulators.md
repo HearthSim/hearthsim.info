@@ -22,6 +22,16 @@ on the official client.
 * [Source code](https://github.com/jleclanche/fireplace)
 
 
+## Sabberstone
+
+Sabberstone is a C# simulator following in the footsteps of Fireplace.
+It faithfully implements the game's packets and includes a declarative C# DSL
+for the cards. It also includes a [Kettle server](/kettle/) and can communicate
+with [Stove](/stove/).
+
+* [Source code](https://github.com/HearthSim/Sabberstone)
+
+
 ## Hearthbreaker
 
 Hearthbreaker is another simulator written in Python 3, with most cards implemented
