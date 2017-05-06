@@ -22,10 +22,6 @@ Sabberstone facts ...
 * 94% Standard 827 Cards
 * 83% Wild 1198 Cards
 
-<img align="center" src="https://github.com/HearthSim/SabberStone/blob/master/Readme/aigameplay.png">
-
 Sabberstone ships a builtin [Kettle](/kettle/) server, which lets it communicate with the real Hearthstone client through [Stove](/stove/), or play games with the [Joust](/joust/) web interface.
 
 [Source code](https://github.com/HearthSim/SabberStone)
-
-<img align="center" src="https://github.com/HearthSim/SabberStone/blob/master/Readme/stove.PNG">
