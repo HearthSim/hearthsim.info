@@ -28,9 +28,10 @@ Sabberstone is a simulator written in [C# Net Core](https://www.microsoft.com/ne
 It has currently more than 95% of the Standard Cards implemented (Year of the Mammoth).
 Sabberstone has been developed to give Hearthstone addicts and AI Devs, a possibility
 to implement fast AIs, an example game tree search is already implemented. Cloning in
-any game state is possible. Sabberstone uses a simple declarative task system to implement
-card mechanics. It also includes a [Kettle server](/kettle/) and is currently the only simulator
-which can communicate with [Stove](/stove/) and play game with the official client (vs. AI or PvP).
+any game state is possible. Sabberstone uses a simple declarative task system to
+implement card mechanics. Sabberstone ships a builtin [Kettle](/kettle/) server, which
+lets it communicate with the real Hearthstone client through [Stove](/stove/), or play
+games with the [Joust](/joust/) web interface.
 
 * [Main page](/sabberstone/)
 * [Source code](https://github.com/HearthSim/Sabberstone)
