@@ -130,3 +130,33 @@ console.log(deckstring); // AAEBAQcAAAQBAwIDAwMEAw==
 const decoded = decode(deckstring);
 console.log(JSON.stringify(deck) === JSON.stringify(decoded)); // true
 ```
+
+### C# / .NET
+
+[HearthDb](https://github.com/HearthSim/HearthDb)s `Deckstrings.DeckSerializer`
+can be used to decode and encode deck strings.
+
+```csharp
+// (Pseudocode)
+using HearthDb.Deckstrings;
+
+var deck = new Deck
+{
+	HeroDbfId = 7,
+	CardDbfIds = new Dictionary()
+	{
+		{1, 3}, {2, 3}, {3, 3}, {4, 3} // {dbfId, count}
+	},
+	Format = FormatType.FT_WILD,
+};
+
+//Serialize deck object to deckstring
+var deckstring = DeckSerializer.Serialize(deck);
+Console.WriteLine(deckstring); // AAEBAQcAAAQBAwIDAwMEAw==
+
+//Deserialize deckstring to deck object
+var serialized = DeckSerializer.Deserialize(deckString);
+Assert.AreEqual(deck, serialized);
+```
+
+For example usage see [HearthDb.Tests.DeckSerializerTest](https://github.com/HearthSim/HearthDb/blob/master/HearthDb.Tests/DeckSerializerTest.cs).
