@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Blizzard Deckstrings
+title: Hearthstone Deckstrings
 permalink: /docs/deckstrings/
 ---
 
-The Blizzard Deckstring format is a base64-encoded compact byte string, which
+The Hearthstone Deckstring format is a base64-encoded compact byte string, which
 losslessly encodes an arbitrary Hearthstone deck.
 
 The purpose of the format is to allow players to share Hearthstone decks, import
