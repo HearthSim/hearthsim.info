@@ -87,4 +87,14 @@ completely different ones upon being redesigned:
 * [**Unbound Elemental**](https://hsreplay.net/cards/774/) replaced **Grounding Totem**: _Your other minions can't be targeted by enemy spells or Hero Powers._
 
 
+**UPDATE**: A couple of extra insights on these changes from Ben Brode himself:
+
+> I think we dropped Demoralizing Roar because Druid was underpowered at the time, and that card was pretty bad.
+>
+> Old Deathwing was an 8/8 at the time, and very powerful. Our first internal tournament featured many Deathwings. :)
+>
+> Emperor Cobra was a similar design to a WoW:TCG card I liked, but it was less interesting in Hearthstone when our resource model became +1 Mana a turn.
+>
+> &mdash; Ben Brode
+
 Jerome
