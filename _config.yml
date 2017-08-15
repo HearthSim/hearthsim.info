@@ -16,6 +16,7 @@ vars:
     youtube: c/HearthstoneScience
     twitter: "@HSReplayNet"
     gitter: "https://gitter.im/HearthSim/HearthSim"
+    irccloud: "https://www.irccloud.com/invite?channel=%23hearthsim&amp;hostname=irc.freenode.net&amp;port=6697&amp;ssl=1"
     webchat: "https://webchat.freenode.net/?channels=hearthsim"
     discord:
       devs: "https://discord.gg/hearthsim-devs"
