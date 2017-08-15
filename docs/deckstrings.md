@@ -52,11 +52,15 @@ is an array of pairs of varints. The goal of this structure is to make the
 deckstring as compact as possible.
 **Each card is represented with a varint DBF ID as mentioned before.**
 
-Heroes: An array of heroes present in the deck. In other words, which hero the
-deck was made for. You should really always expect one.
+Heroes: An array of initial heroes present in the deck. In other words, which hero
+the deck was made for. You should really always expect one.
 Additional note: The hero's class determines which class the deck is for, but the
 deck is ostensibly made for a hero, not a class. If the specified hero is a hero
 skin, it will be used instead of the main hero iff available.
+
+**Note on heroes**: Although it is an array, it is used for the *initial hero*,
+not *playable heroes* (such as the Frozen Throne heroes). If you can draw it, do
+not use this array.
 
 Single-copy cards: Cards for which there is exactly one copy in the deck.
 2-copy cards: Cards for which there is exactly two copies in the deck.
