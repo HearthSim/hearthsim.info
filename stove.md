@@ -10,4 +10,4 @@ It ships a [Kettle](/kettle) adapter, which lets it communicate with
 Hearthstone simulators such as [Fireplace](/fireplace/) to create and simulate
 games.
 
-[Source code](https://github.com/HearthSim/stove/)
+*Note: The Stove source code is no longer publicly available.*
