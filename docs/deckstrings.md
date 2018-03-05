@@ -22,7 +22,7 @@ A reference API is available on [HearthstoneJSON](https://hearthstonejson.com).
 The deckstring is a base64-encoded byte string. We decode it first.
 
 **Unless specified otherwise, every value that follows is an integer, encoded as
-a [varint](https://en.wikipedia.org/wiki/Variable-length_quantity).**
+an unsigned [varint](https://en.wikipedia.org/wiki/Variable-length_quantity).**
 
 
 ### 1. Header block
