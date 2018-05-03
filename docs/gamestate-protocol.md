@@ -198,7 +198,7 @@ The last state change is `GOLD_REWARD_STATE`; after that, clients disconnect fro
 
 You now know how to interpret the Hearthstone game state protocol! Here's what you can look at with your newfound knowledge:
 
-- [Enable logging in Hearthstone](). This is how Hearthstone Deck Tracker works. This is how we can create replays. Looking at your logs in real time will help you learn the internals of the game at a very deep level.
+- [Enable logging in Hearthstone](https://github.com/jleclanche/fireplace/wiki/How-to-enable-logging). This is how Hearthstone Deck Tracker works. This is how we can create replays. Looking at your logs in real time will help you learn the internals of the game at a very deep level.
 - [Try the Python HSLog library](https://github.com/HearthSim/python-hslog). This library allows you to parse Power.log files and do really nifty things with them.
 - [Take a look at the HSReplay XML spec](https://hearthsim.info/hsreplay/). HSReplay XML is the Hearthstone Game State replay, stored as an XML file. It's easier to parse than Power.log files, and more compact.
 - [Use the Python Hearthstone library for reference](https://github.com/HearthSim/python-hearthstone). Even if you don't work with Python, several internals (including all enums and the entire card database) are exposed in that library. They are essential to working with Hearthstone data.
