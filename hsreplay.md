@@ -6,16 +6,17 @@ permalink: /hsreplay/
 
 **HSReplay** is a specification for Hearthstone replays.
 
-The DTD for HSReplay 1.3 is available here:
-
-<https://hearthsim.info/hsreplay/dtd/hsreplay-1.3.dtd>
-
-For development and a reference implementations in Python, see the Github repository:
-
-<https://github.com/HearthSim/hsreplay>
-
-The main user of the HSReplay spec is [HSReplay.net](https://hsreplay.net),
+The primary user of the HSReplay spec is [HSReplay.net](https://hsreplay.net),
 which uses [Joust](/joust) to make replays available on the web.
+
+
+## Useful links
+
+* [HSReplay 1.7 DTD](https://hearthsim.info/hsreplay/dtd/hsreplay-1.7.dtd)
+* [HSReplay development repository](https://github.com/HearthSim/HSReplay)
+* [HSReplay Python library](https://github.com/HearthSim/python-hsreplay)
+* [HSReplay XML viewer: Joust](https://github.com/HearthSim/Joust)
+* [Gamestate Protocol documentation](/docs/gamestate-protocol/)
 
 
 ## Example replay
