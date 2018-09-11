@@ -72,9 +72,12 @@ in the deck, which means that it will (at this time) always be empty for
 constructed decks; however it can theoretically contain single and double copy
 cards as well.
 
-Although final ordering does not matter, cards are sorted by DBF ID in their
-respective array in order to consistently generate the same deckstrings for the
-same decks.
+Although final ordering does not matter, cards are sorted by ascending DBF ID in
+their respective array in order to consistently generate the same deckstrings for
+the same decks. We call deckstrings where all card lists (including heroes) are
+sorted this way **canonical deckstrings**. The reference implementations below
+should already be generating canonical deckstrings.
+
 
 ## Comments
 
@@ -82,9 +85,6 @@ When pasted into Hearthstone, the client will disregard any line beginning with
 the `#` character, which allows inserting comments into the string.
 One exception is the first line beginning with `###` preceding the deck string,
 which will be used as the deck name if available.
-
-
-## Examples
 
 
 ## References
