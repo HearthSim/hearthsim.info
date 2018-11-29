@@ -12,7 +12,7 @@ which uses [Joust](/joust) to make replays available on the web.
 
 ## Useful links
 
-* [HSReplay 1.7 DTD](https://hearthsim.info/hsreplay/dtd/hsreplay-1.7.dtd)
+* [HSReplay 1.8 DTD](https://hearthsim.info/hsreplay/dtd/hsreplay-1.8.dtd)
 * [HSReplay development repository](https://github.com/HearthSim/HSReplay)
 * [HSReplay Python library](https://github.com/HearthSim/python-hsreplay)
 * [HSReplay XML viewer: Joust](https://github.com/HearthSim/Joust)
