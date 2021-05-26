@@ -7,12 +7,9 @@ shields_irc: https://img.shields.io/badge/IRC-%23hearthsim-1e72ff.svg?style=flat
 
 ## Chat
 
-The HearthSim developer community's main hang out is on IRC/Discord.
-The channel is mirrored between the two, you can use either!
+The HearthSim developer community's main hang out is on Discord.
 
-* IRC: #HearthSim on chat.freenode.net &mdash; <a href="{{ site.vars.links.irccloud }}" target="_blank"><img src="{{ shields_irc }}" height="20"></a>
 * Discord: [Instant invite]({{ site.vars.links.discord.devs }})
-* Gitter (extra mirror; logs): [HearthSim/HearthSim]({{ site.vars.links.gitter }})
 
 Subreddits:
 
