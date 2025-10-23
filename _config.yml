@@ -16,9 +16,6 @@ vars:
     youtube: c/HearthstoneScience
     twitter: "@HSReplayNet"
     gitter: "https://gitter.im/HearthSim/HearthSim"
-    discord:
-      devs: "https://discord.gg/hearthsim-devs"
-      users: "https://discord.gg/hearthsim"
     reddit:
       hearthsim: "https://reddit.com/r/hearthsim"
       hsreplay: "https://reddit.com/r/hsreplay"
